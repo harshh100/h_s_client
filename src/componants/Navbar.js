@@ -7,26 +7,28 @@ export default class Navbar extends Component {
         return (
             <>
                 <nav className='Navmain'>
-                    <div>   
-                        <img src={Logo} alt="Logo" className='logonav' />
-                    </div>
-                    <div>
+                    <div className='nav_center'>
                         <ul className='List'>
                             <li className='navitom'>
-                                <Link to ="/" className='fontco'>Home</Link>
-                            </li>
+                                <Link to="/" className='fontco'>Home</Link>
+                            </li >
                             <li className='navitom'>
                                 <Link to="/about" className='fontco'>AboutUs</Link>
                             </li>
                             <li className='navitom'>
+                                <img src={Logo} alt="Logo" className='logonav' />
+                            </li>
+
+                            <li className='navitom'>
                                 <Link to="/services" className='fontco'>OurServices</Link>
                             </li>
                             <li className='navitom'>
-                            <Link to="/ruff" className='fontco'>ContactUS</Link>
+                                <Link to="/ruff" className='fontco'>ContactUS</Link>
                             </li>
-                        </ul>
-                    </div>
-                </nav>
+                        </ul >
+                    </div >
+
+                </nav >
             </>
         )
     }
