@@ -1,11 +1,11 @@
 /* Home */
 
 * {
-  background-color: black;
+  background-color: white;
 }
 
 h2 {
-  color: white;
+  color: black;
 }
 
 .mainapp {
@@ -36,13 +36,14 @@ h2 {
 }
 
 .Navmain {
+  box-shadow: 0 -12px 38px 0 rgba(0, 0, 0, 0.37);
   display: flex;
   flex-direction: row;
   position: sticky;
 }
 
 .navitom {
-  color: white;
+  color: black;
   padding-left: 40px;
 }
 
@@ -79,13 +80,13 @@ h2 {
 
 button {
   height: 40px;
-  color: white;
+  color: black;
   padding: 5px;
   padding-left: 20px;
   padding-right: 20px;
   font-size: larger;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background-color: #fc0101;
+  background-color: #f49f04;
   border-radius: 10px;
   transition: 0.3s;
   display: flex;
@@ -93,7 +94,7 @@ button {
 }
 
 button:hover {
-  background-color: #fc0101;
+  background-color: #f49f04;
   cursor: pointer;
   transform: scale(1.2);
 }
@@ -110,16 +111,17 @@ button:hover {
 }
 
 a {
-  color: white;
+  color: black;
   text-decoration: none;
-  font-size: larger;
+  font-size: 27px;
   font-weight: 500;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   transition: 0.2s;
 }
 
 a:hover {
-  color: rgba(252, 1, 1, 255);
+  color: #f49f04;
+  ;
 }
 
 .RouterDiv {
@@ -130,7 +132,7 @@ a:hover {
 
 h1 {
   margin: 10px;
-  color: red;
+  color: #f49f04;
   background-color: rgba(255, 255, 255, 0);
 }
 
@@ -169,7 +171,7 @@ h1 {
 
 .InfoDivServices {
   font-size: 20px;
-  color: white;
+  color: black;
   display: flex;
   background-color: rgba(255, 255, 255, 0);
   margin: 10px;
@@ -178,7 +180,7 @@ h1 {
 p {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   background-color: rgba(255, 255, 255, 0);
-  color: white;
+  color: black;
 }
 
 .DishesDivServices {
@@ -187,7 +189,8 @@ p {
 }
 
 .PriceDivServices {
-  color: rgba(252, 1, 1, 255);
+  color: #f49f04;
+  ;
   margin-left: 80px;
   background-color: rgba(255, 255, 255, 0);
 }
@@ -250,14 +253,15 @@ p {
 .about-section h1 {
 
   text-align: center;
-  color: #fff;
+  color: black;
   background-color: #00000000;
 }
 
 .border {
   width: 100px;
   height: 3px;
-  background: rgba(252, 1, 1, 255);
+  background: #f49f04;
+  ;
   margin: 40px auto;
 }
 
@@ -279,16 +283,17 @@ p {
 
 .about p {
   margin-bottom: 20px;
-  color: #ffffff;
+  color: black;
   font-size: 17px;
   background-color: rgba(0, 0, 0, 0);
 }
 
 .about a {
   display: inline-block;
-  color: #ffffff;
+  color: black;
   text-decoration: none;
-  border: 2px solid rgba(252, 1, 1, 255);
+  border: 2px solid #f49f04;
+  ;
   border-radius: 24px;
   padding: 8px 40px;
   transition: 0.4s linear;
@@ -296,8 +301,9 @@ p {
 }
 
 .about a:hover {
-  color: #fff;
-  background: rgba(252, 1, 1, 255);
+  color: black;
+  background: #f49f04;
+  ;
 }
 
 .skills {
@@ -312,7 +318,7 @@ p {
 
 .title {
   background-color: rgba(0, 0, 0, 0);
-  color: #ffffff
+  color: black
 }
 
 .progress {
@@ -324,7 +330,8 @@ p {
 
 .progress-bar {
   height: 12px;
-  background: rgba(252, 1, 1, 255);
+  background: #f49f04;
+  ;
   border-radius: 12px;
 }
 
@@ -407,7 +414,8 @@ p {
 /* Vraj parmar */
 
 .dennis-head {
-  color: red;
+  color: #f49f04;
+  ;
   display: flex;
   justify-content: center;
 }
@@ -423,7 +431,8 @@ p {
 }
 
 .dennis-dish {
-  color: red;
+  color: #f49f04;
+  ;
   padding-right: 30px;
   display: flex;
   flex-direction: column;
@@ -434,7 +443,7 @@ p {
 }
 
 .dennis-price {
-  color: white;
+  color: black;
   padding-left: 30px;
   display: flex;
   justify-content: flex-end;
@@ -461,7 +470,8 @@ p {
 }
 
 .dennis-maindishhead {
-  color: red;
+  color: #f49f04;
+  ;
   background-color: #00000000;
 }
 
@@ -515,7 +525,7 @@ p {
 }
 
 .container form h1 {
-  color: #fff;
+  color: black;
   font-weight: 500;
   margin-top: 20px;
   width: 500px;
@@ -531,7 +541,7 @@ p {
   font-size: 15px;
   margin-bottom: 10px;
   background: none;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid black;
 }
 
 .container form input::placeholder {
@@ -544,7 +554,7 @@ p {
 }
 
 .container form h4 {
-  color: #fff;
+  color: black;
   font-weight: 300;
   width: 600px;
   margin-top: 20px;
@@ -553,8 +563,8 @@ p {
 .container form textarea {
   background: none;
   border: none;
-  border-bottom: 2px solid #fff;
-  color: #fff;
+  border-bottom: 2px solid black;
+  color: black;
   font-weight: 200;
   font-size: 15px;
   padding: 10px;
@@ -597,7 +607,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 .ipcontact {
-  color: white;
+  color: black;
 }
 
 
@@ -629,7 +639,7 @@ textarea::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {
