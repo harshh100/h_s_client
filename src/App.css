@@ -1,5 +1,4 @@
 /* Home */
-
 * {
   background-color: white;
 }
@@ -213,8 +212,6 @@ p {
   margin: 30px;
 }
 
-/* kirtan */
-
 /* Aboutus */
 .logo {
   width: 70%;
@@ -383,15 +380,6 @@ p {
   }
 }
 
-/* anish */
-
-
-
-
-
-
-
-
 /*media querry for Home*/
 
 @media(max-width:1160px) {
@@ -409,9 +397,6 @@ p {
 }
 
 /* end of home */
-
-
-/* Vraj parmar */
 
 .dennis-head {
   color: #f49f04;
@@ -477,6 +462,7 @@ p {
 
 .dennis-mainhead {
   display: flex;
+  margin-top: 10px;
   justify-content: center;
   background-color: #00000000;
 }
@@ -488,8 +474,6 @@ p {
 .a-dennis {
   background-color: #00000000;
 }
-
-/* anish */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
@@ -609,11 +593,6 @@ textarea::-webkit-scrollbar-thumb {
 .ipcontact {
   color: black;
 }
-
-
-
-
-
 
 /* Dont touch this */
 .App {

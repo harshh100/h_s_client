@@ -18,7 +18,7 @@ export default class Aboutus extends Component {
                                 <div className="about-section-col">
                                     <div className="about">
                                         <p>
-                                            Launched in 2022, Our technology platform connects customers,restaurant partners and delivery partners,serving their multiple needs.Customers use our platform to search and discover restaurants,order food delivery.
+                                            Launched in 2023, Our technology platform connects customers,restaurant partners and delivery partners,serving their multiple needs.Customers use our platform to search and discover restaurants,order food delivery.
                                         </p>
                                         <Link to="/">Home</Link>
                                     </div>

@@ -1,6 +1,6 @@
 import Navbar from './componants/Navbar';
 import Home from './componants/Home';
-import Dennis from './componants/dennis';
+import Menu from './componants/Itm_list';
 import './App.css';
 import Contact from './componants/Contact';
 // import Ruff from './componants/ruff';
@@ -22,11 +22,11 @@ function App() {
           <Router>
             <Navbar />
             <Routes>
-              <Route path='/' element={<Home/>}/>
-              <Route path='/about' element={<Aboutus/>}/>
-              <Route path='/services' element={<ServicesArea/>}/>
-              <Route path='/contact' element={<Contact/>}/>
-              <Route path='/dennis' element={<Dennis/>}/>
+              <Route path='/' element={<Home />} />
+              <Route path='/about' element={<Aboutus />} />
+              <Route path='/services' element={<ServicesArea />} />
+              <Route path='/contact' element={<Contact />} />
+              <Route path='/menu' element={<Menu />} />
             </Routes>
           </Router>
         </div>
