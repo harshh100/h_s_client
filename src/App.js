@@ -11,7 +11,8 @@ import {
   Route,
 } from "react-router-dom";
 import Aboutus from './componants/Aboutus';
-import ServicesArea from './componants/ServicesArea';
+// import ServicesArea from './componants/ServicesArea';
+import Footer from './componants/Footer';
 // import ServicesArea from './componants/ServicesArea';
 
 function App() {
@@ -24,10 +25,10 @@ function App() {
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/about' element={<Aboutus />} />
-              <Route path='/services' element={<ServicesArea />} />
               <Route path='/contact' element={<Contact />} />
               <Route path='/menu' element={<Menu />} />
             </Routes>
+            <Footer />
           </Router>
         </div>
       </div >

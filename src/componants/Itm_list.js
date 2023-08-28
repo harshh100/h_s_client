@@ -5,7 +5,7 @@ import Type_list from './Type_list'
 
 const menu = [{
     itm: 'Maggi',
-    types: [{ name: 'Masala Maggi', price: 500 }, { name: 'Butter Maggi', price: 50 }, { name: 'Cheese Maggi', price: 60 }]
+    types: [{ name: 'Masala Maggi', price: 40 }, { name: 'Butter Maggi', price: 50 }, { name: 'Cheese Maggi', price: 60 }]
 },
 {
     itm: 'Garlic Toast',
