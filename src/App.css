@@ -51,6 +51,11 @@ h2 {
   height: 90px;
 }
 
+.cart_img {
+  width: 40px;
+
+}
+
 #homediv {
   display: flex;
 }

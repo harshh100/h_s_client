@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Logo from './Img/h_&_s_black.png'
 import { Link } from "react-router-dom";
-
+import cart_img from './Img/cart.png';
 export default class Navbar extends Component {
     render() {
         return (
@@ -23,7 +23,7 @@ export default class Navbar extends Component {
                                 <Link to="/menu" className='fontco'>Menu</Link>
                             </li>
                             <li className='navitom'>
-                                <Link to="/ruff" className='fontco'>ContactUS</Link>
+                                <Link to="/cart" className='fontco'><img src={cart_img} alt="Cart" className='cart_img' /></Link>
                             </li>
                         </ul >
                     </div >
