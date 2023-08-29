@@ -1,19 +1,17 @@
-import Navbar from './componants/Navbar';
-import Home from './componants/Home';
-import Menu from './componants/Itm_list';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Menu from './components/Itm_list';
 import './App.css';
-import Contact from './componants/Contact';
-// import Ruff from './componants/ruff';
+import Contact from './components/Contact';
 // import { render } from "react-dom";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
-import Aboutus from './componants/Aboutus';
-// import ServicesArea from './componants/ServicesArea';
-import Footer from './componants/Footer';
-// import ServicesArea from './componants/ServicesArea';
+import Aboutus from './components/Aboutus';
+import Footer from './components/Footer';
+import Unknownurl from './components/Unknownurl';
 
 function App() {
   return (
@@ -27,6 +25,7 @@ function App() {
               <Route path='/about' element={<Aboutus />} />
               <Route path='/contact' element={<Contact />} />
               <Route path='/menu' element={<Menu />} />
+              <Route path='*' element={<Unknownurl />} />
             </Routes>
             <Footer />
           </Router>

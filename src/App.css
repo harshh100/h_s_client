@@ -14,7 +14,10 @@ h2 {
 }
 
 .nav_center {
-  margin: 0px auto;
+  width: 85%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(9, 13, 0, 0.20);
+  margin: 20px auto;
 }
 
 #HomeLogoDiv {
@@ -26,16 +29,18 @@ h2 {
 }
 
 .List {
-  justify-content: flex-end;
+  /* padding: 0px; */
+  border-radius: 20px;
+  justify-content: center;
   display: flex;
   flex-direction: row;
   list-style: none;
-  padding-top: 20px;
+  padding: 5px 0px;
+  margin: 0px;
   align-items: center;
 }
 
 .Navmain {
-  box-shadow: 0 -12px 38px 0 rgba(0, 0, 0, 0.37);
   display: flex;
   flex-direction: row;
   position: sticky;
@@ -43,7 +48,7 @@ h2 {
 
 .navitom {
   color: black;
-  padding-left: 40px;
+  padding: 0px 20px;
 }
 
 .logonav {
@@ -428,8 +433,13 @@ p {
   flex-direction: column;
   justify-content: flex-start;
   align-items: baseline;
-  width: 300px;
+  width: -webkit-fill-available;
   background-color: #00000000;
+}
+
+.Ingredient {
+  font-size: 14px;
+  color: #949392;
 }
 
 .dennis-price {
@@ -836,7 +846,7 @@ textarea::-webkit-scrollbar-thumb {
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 footer .con {
-  max-width: 1170px;
+  width: 85%;
   margin: auto;
 }
 
@@ -922,6 +932,14 @@ footer .footer-col .social-links a:hover {
   background-color: #ffffff;
 }
 
+.day_time {
+  float: right;
+}
+
+.open_time {
+  width: 220px;
+}
+
 /*responsive*/
 @media(max-width: 767px) {
   .footer-col {
@@ -934,4 +952,30 @@ footer .footer-col .social-links a:hover {
   .footer-col {
     width: 100%;
   }
+}
+
+/* error */
+.err a {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  border: 2px solid #f49f04;
+  ;
+  border-radius: 24px;
+  padding: 8px 40px;
+  transition: 0.4s linear;
+
+}
+
+.err a:hover {
+  color: black;
+  background: #f49f04;
+  ;
+}
+
+.err .err_404 {
+  font-size: 100px;
+  font-weight: bold;
+  margin-top: 40px;
+
 }

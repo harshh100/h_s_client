@@ -4,6 +4,7 @@ const Footer = () => {
     return (
         <footer class="footer">
             <div class="con">
+                <hr />
                 <div class="row">
                     <div class="footer-col">
                         <h4>H & S</h4>
@@ -33,21 +34,21 @@ const Footer = () => {
                             <li><a href="#">Bread</a></li>
                         </ul>
                     </div>
-                    <div class="footer-col">
+                    <div className="footer-col">
                         <h4>Open Hours</h4>
-                        <ul>
-                            <li><a href="#"><span>Monday</span><span>9:00 - 24:00</span></a></li>
-                            <li><a href="#"><span>Tuesday</span><span>9:00 - 24:00</span></a></li>
-                            <li><a href="#"><span>Wednesday</span><span>9:00 - 24:00</span></a></li>
-                            <li><a href="#"><span>Thursday</span><span>9:00 - 24:00</span></a></li>
-                            <li><a href="#"><span>Friday</span><span>9:00 - 24:00</span></a></li>
-                            <li><a href="#"><span>Saturday</span><span>9:00 - 24:00</span></a></li>
-                            <li><a href="#"><span>Sunday</span><span>9:00 - 24:00</span></a></li>
+                        <ul className='open_time'>
+                            <li><a href="#"><span>Monday : </span><span className='day_time'>9:00 - 24:00</span></a></li>
+                            <li><a href="#"><span>Tuesday : </span><span className='day_time'>9:00 - 24:00</span></a></li>
+                            <li><a href="#"><span>Wednesday : </span><span className='day_time'>9:00 - 24:00</span></a></li>
+                            <li><a href="#"><span>Thursday : </span><span className='day_time'>9:00 - 24:00</span></a></li>
+                            <li><a href="#"><span>Friday : </span><span className='day_time'>9:00 - 24:00</span></a></li>
+                            <li><a href="#"><span>Saturday : </span><span className='day_time'>9:00 - 24:00</span></a></li>
+                            <li><a href="#"><span>Sunday : </span><span className='day_time'>9:00 - 24:00</span></a></li>
                         </ul>
                     </div>
                 </div>
+                <hr />
             </div>
-            <hr />
             <p className="text-center">© Hot & Spicy 2023</p>
         </footer>
         // <footer>

@@ -1,4 +1,5 @@
 import React from 'react'
+import Formateprice from '../helper/Formateprice';
 
 function Type_list(props) {
     function addtocart() {
@@ -9,12 +10,13 @@ function Type_list(props) {
         <>
             {
                 props.types.map(type => (
-                    <div className="dennis-manu">
+                    <div className="dennis-manu" key={type.name}>
                         <div className='dennis-dish'>
                             {type.name}
+                            <p className='Ingredient'>Ingredient : {type.ingredient} </p>
                         </div>
                         <div className='dennis-price'>
-                            {type.price}<span>₹</span>
+                            {<Formateprice price={type.price} />}
                         </div>
                         <div className='buy_now'>
                             <div data-tooltip="Price:-$20" class="button">
