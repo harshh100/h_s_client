@@ -65,6 +65,34 @@ h2 {
   display: flex;
 }
 
+
+.cart-trolley--link {
+  position: relative;
+
+  .cart-trolley {
+    position: relative;
+    font-size: 5.2rem;
+  }
+
+  .cart-total--item {
+    width: 4.2rem;
+    height: 4.2rem;
+    font-size: 2rem;
+    position: relative;
+    left: -10px;
+    top: -12px;
+    font-size: 13px;
+    background-color: #f49f04;
+    padding: 2px;
+    border-radius: 100%;
+  }
+
+}
+
+.cart-trolley--link:hover {
+  color: #000000;
+}
+
 #burimg {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);

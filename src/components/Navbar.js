@@ -23,7 +23,11 @@ export default class Navbar extends Component {
                                 <Link to="/menu" className='fontco'>Menu</Link>
                             </li>
                             <li className='navitom'>
-                                <Link to="/cart" className='fontco'><img src={cart_img} alt="Cart" className='cart_img' /></Link>
+                                <Link to="/cart" className='cart-trolley--link fontco'>
+                                    <img src={cart_img} alt="Cart" className='cart-trolley cart_img' />
+                                    {/* <FiShoppingCart className="cart-trolley" /> */}
+                                    <span className="cart-total--item"> 10 </span>
+                                </Link>
                             </li>
                         </ul >
                     </div >
