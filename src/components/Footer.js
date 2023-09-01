@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useName } from '../context/Itmcontext';
+
 
 const Footer = () => {
+    const { name } = useName();
     return (
         <footer class="footer">
             <div class="con">
@@ -49,7 +52,7 @@ const Footer = () => {
                 </div>
                 <hr />
             </div>
-            <p className="text-center">© Hot & Spicy 2023</p>
+            <p className="text-center">©{name} Hot & Spicy 2023</p>
         </footer>
         // <footer>
         //     <hr />
