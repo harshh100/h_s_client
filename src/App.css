@@ -1,3 +1,9 @@
+/* font */
+/* @import url('https://fonts.googleapis.com/css2?family=Miss+Fajardose&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+
 /* Home */
 * {
   background-color: white;
@@ -99,7 +105,7 @@ h2 {
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 4px 3px 3px 3px rgba(0, 0, 0, 0.37);
+  box-shadow: rgba(0, 0, 0, 0.05) 5px 6px 3px 6px;
   margin-top: 20px;
   margin-bottom: 20px;
   padding-top: 50px;
@@ -135,6 +141,56 @@ h2 {
   cursor: pointer;
   transform: scale(1.2);
 } */
+
+
+.heading-section .subheading {
+  position: absolute;
+  top: -57px;
+  left: 0;
+  right: 0;
+  font-weight: normal;
+  font-size: 100px;
+  display: block;
+  margin-bottom: 0;
+  color: rgba(0, 0, 0, 0.2);
+  color: #ffa323;
+  line-height: 1;
+  font-family: 'Dancing Script', cursive;
+  margin-top: 0;
+  /* z-index: -1; */
+}
+
+.today_sty_text {
+  margin-top: 80px;
+  margin-bottom: -50px;
+}
+
+.sevices_sty_text {
+  margin-top: 100px;
+  margin-bottom: -140px;
+}
+
+.menu_sty_text {
+  margin-top: 45px;
+  margin-bottom: -40px;
+}
+
+.heading-section {
+  position: relative;
+}
+
+.heading-section h2 {
+  background: none;
+  position: relative;
+  font-size: 50px;
+  color: #333333;
+  font-weight: 900;
+}
+
+.line_class {
+  width: 85%;
+  margin: 0px auto;
+}
 
 .MainDivSrevices {
   display: flex;
@@ -524,7 +580,7 @@ p {
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 4px 3px 3px 3px rgba(0, 0, 0, 0.37);
+  box-shadow: rgba(0, 0, 0, 0.05) 5px 6px 3px 6px;
   width: min-content;
 }
 

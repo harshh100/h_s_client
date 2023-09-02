@@ -31,13 +31,33 @@ export default class home extends Component {
             </div>
           </div>
         </div>
+        <div className='line_class'>
+          <hr />
+        </div>
+        <div class="row justify-content-center today_sty_text">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <span class="subheading">Today's</span>
+            <h2 class="mb-4">Special</h2>
+          </div>
+        </div>
         <div className='today_special'>
-          <img src={today_offer} alt="" className="today_offer" />
+          {/* <img src={today_offer} alt="" className="today_offer" /> */}
           <div className="today_special_itm">
             <Type_list types={today_special} />
           </div>
         </div >
+        <div className='line_class'>
+          <hr />
+        </div>
+        <div class="row justify-content-center sevices_sty_text">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <span class="subheading">Our</span>
+            <h2 class="mb-4">Services</h2>
+          </div>
+        </div>
         <Services></Services>
+
+
       </>
     )
   }

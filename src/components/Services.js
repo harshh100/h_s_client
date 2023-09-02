@@ -5,46 +5,46 @@ import { GiReceiveMoney } from "react-icons/gi";
 import { RiSecurePaymentLine } from "react-icons/ri";
 
 const Services = () => {
-    return (
-        <Wrapper>
-            <div className="ser_container">
-                <div className="grid grid-three-column">
-                    <div className="services-1">
-                        <div>
-                            <TbTruckDelivery className="icon" />
-                            <h3>Super Fast and Free Delivery</h3>
-                        </div>
-                    </div>
-
-                    <div className="services-2">
-                        <div className="services-colum-2">
-                            <div>
-                                <MdSecurity className="icon" />
-                                <h3>Non-contact Shipping</h3>
-                            </div>
-                        </div>
-                        <div className="services-colum-2">
-                            <div>
-                                <GiReceiveMoney className="icon" />
-                                <h3>Money-back Guaranteed</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="services-3">
-                        <div>
-                            <RiSecurePaymentLine className="icon" />
-                            <h3>Super Secure Payment System</h3>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <Wrapper>
+      <div className="ser_container">
+        <div className="grid grid-three-column">
+          <div className="services-1">
+            <div>
+              <TbTruckDelivery className="icon" />
+              <h3>Free Delivery on ₹150+ Order</h3>
             </div>
-        </Wrapper>
-    );
+          </div>
+
+          <div className="services-2">
+            <div className="services-colum-2">
+              <div>
+                <MdSecurity className="icon" />
+                <h3>Non-contact Shipping</h3>
+              </div>
+            </div>
+            <div className="services-colum-2">
+              <div>
+                <GiReceiveMoney className="icon" />
+                <h3>Money-back Guaranteed</h3>
+              </div>
+            </div>
+          </div>
+
+          <div className="services-3">
+            <div>
+              <RiSecurePaymentLine className="icon" />
+              <h3>Super Secure Payment System</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Wrapper>
+  );
 };
 
 const Wrapper = styled.section`
-  padding: 9rem 0;
+padding-top: 9rem;
   width: 85%;
   margin: 0px auto;
   .grid {
@@ -63,7 +63,7 @@ const Wrapper = styled.section`
     align-content: center;
     text-align: center;
     border-radius: 2rem;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    box-shadow: rgba(0, 0, 0, 0.05) 5px 6px 3px 6px;
   }
 
   .services-2 {
@@ -78,7 +78,7 @@ const Wrapper = styled.section`
       justify-content: center;
       align-items: center;
       border-radius: 2rem;
-      box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+      box-shadow: rgba(0, 0, 0, 0.05) 5px 6px 3px 6px;
 
       div {
         display: flex;

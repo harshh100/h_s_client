@@ -30,7 +30,12 @@ export default function Itm_list() {
     return (
         <>
             <div className="dennis-head">
-                <h1>Menu </h1>
+                <div class="row justify-content-center menu_sty_text">
+                    <div class="col-md-7 text-center heading-section ftco-animate">
+                        <span class="subheading">Our</span>
+                        <h2 class="mb-4">Menu</h2>
+                    </div>
+                </div>
             </div>
             <div className='contentcenter'>
                 <div className="dennis-maindish">
