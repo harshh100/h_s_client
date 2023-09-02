@@ -63,7 +63,7 @@ padding-top: 9rem;
     align-content: center;
     text-align: center;
     border-radius: 2rem;
-    box-shadow: rgba(0, 0, 0, 0.05) 5px 6px 3px 6px;
+    box-shadow: 3px 3px 0px 5px rgb(244 159 4 / 20%);
   }
 
   .services-2 {
@@ -78,7 +78,7 @@ padding-top: 9rem;
       justify-content: center;
       align-items: center;
       border-radius: 2rem;
-      box-shadow: rgba(0, 0, 0, 0.05) 5px 6px 3px 6px;
+      box-shadow: 3px 3px 0px 5px rgb(244 159 4 / 20%);
 
       div {
         display: flex;
