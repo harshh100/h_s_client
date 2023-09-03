@@ -1,11 +1,12 @@
 import React from 'react'
 import Formateprice from '../helper/Formateprice';
+import { useCartContext } from '../context/cart_context';
 
 function Type_list(props) {
-    function addtocart() {
-        alert("Added Into Cart");
-        // console.log('Addtocart')
-    }
+    const { addToCart } = useCartContext();
+    // const addToCart = (n, p) => {
+    //     console.log(n, p);
+    // }
     return (
         <>
             {
@@ -20,7 +21,7 @@ function Type_list(props) {
                         </div>
                         <div className='buy_now'>
                             <div class="button">
-                                <button class="button-wrapper" onClick={addtocart}>
+                                <button class="button-wrapper" onClick={() => addToCart(type.name, type.price, type.stock)}>
                                     <div class="text">Add</div>
                                     <span class="icon">
                                         {/* <button> */}

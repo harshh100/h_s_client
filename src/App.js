@@ -12,6 +12,7 @@ import {
 import Aboutus from './components/Aboutus';
 import Footer from './components/Footer';
 import Unknownurl from './components/Unknownurl';
+import Cart from './components/Cart';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route path='/about' element={<Aboutus />} />
               <Route path='/contact' element={<Contact />} />
               <Route path='/menu' element={<Menu />} />
+              <Route path='/cart' element={<Cart />} />
               <Route path='*' element={<Unknownurl />} />
             </Routes>
             <Footer />
