@@ -35,7 +35,7 @@ export default class home extends Component {
           <hr />
         </div>
         <div class="row justify-content-center today_sty_text">
-          <div class="col-md-7 text-center heading-section ftco-animate">
+          <div class="col-md-7 text-center heading-section ftco-animate pop-outin">
             <span class="subheading">Today's</span>
             <h2 class="mb-4">Special</h2>
           </div>
@@ -50,7 +50,7 @@ export default class home extends Component {
           <hr />
         </div>
         <div class="row justify-content-center sevices_sty_text">
-          <div class="col-md-7 text-center heading-section ftco-animate">
+          <div class="col-md-7 text-center heading-section ftco-animate pop-outin">
             <span class="subheading">Our</span>
             <h2 class="mb-4">Services</h2>
           </div>

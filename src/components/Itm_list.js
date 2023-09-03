@@ -31,7 +31,7 @@ export default function Itm_list() {
         <>
             <div className="dennis-head">
                 <div class="row justify-content-center menu_sty_text">
-                    <div class="col-md-7 text-center heading-section ftco-animate">
+                    <div class="col-md-7 text-center heading-section ftco-animate pop-outin">
                         <span class="subheading">Our</span>
                         <h2 class="mb-4">Menu</h2>
                     </div>
