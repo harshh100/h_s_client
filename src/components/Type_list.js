@@ -19,7 +19,7 @@ function Type_list(props) {
                             {<Formateprice price={type.price} />}
                         </div>
                         <div className='buy_now'>
-                            <div data-tooltip="Price:-$20" class="button">
+                            <div class="button">
                                 <button class="button-wrapper" onClick={addtocart}>
                                     <div class="text">Add</div>
                                     <span class="icon">

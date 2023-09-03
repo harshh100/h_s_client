@@ -527,6 +527,10 @@ p {
   color: #949392;
 }
 
+.sc_bar {
+  border-radius: 20px;
+}
+
 .dennis-price {
   color: black;
   padding-left: 30px;
@@ -544,12 +548,14 @@ p {
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 3px 3px 0px 5px rgb(244 159 4 / 20%);
-  width: 700px;
+  width: 620px;
+  margin: 25px;
 }
 
 .contentcenter {
   margin-top: 30px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   background-color: #00000000;
 }
