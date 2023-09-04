@@ -150,7 +150,7 @@ const Wrapper = styled.section`
 
   .remove_icon {
     font-size: 1.6rem;
-    color: #e74c3c;
+    color: #f49f04;
     cursor: pointer;
   }
 

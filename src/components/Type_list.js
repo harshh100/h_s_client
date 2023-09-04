@@ -1,12 +1,23 @@
 import React from 'react'
+import { useState } from "react";
 import Formateprice from '../helper/Formateprice';
 import { useCartContext } from '../context/cart_context';
 
 function Type_list(props) {
     const { addToCart } = useCartContext();
+    const [amount, setAmount] = useState(1);
     // const addToCart = (n, p) => {
     //     console.log(n, p);
     // }
+
+    // const setDecrease = () => {
+    //     amount > 1 ? setAmount(amount - 1) : setAmount(1);
+    // };
+
+    // const setIncrease = () => {
+    //     amount < stock ? setAmount(amount + 1) : setAmount(stock);
+    // };
+
     return (
         <>
             {
@@ -21,7 +32,7 @@ function Type_list(props) {
                         </div>
                         <div className='buy_now'>
                             <div class="button">
-                                <button class="button-wrapper" onClick={() => addToCart(type.name, type.price, type.stock)}>
+                                <button class="button-wrapper" onClick={() => addToCart(type.name, type.price, type.stock, amount)}>
                                     <div class="text">Add</div>
                                     <span class="icon">
                                         {/* <button> */}
