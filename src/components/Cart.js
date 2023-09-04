@@ -2,9 +2,16 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/cart_context";
 import CartItem from "./CartItem";
+import Formateprice from '../helper/Formateprice';
+import { Scrollbars } from 'react-custom-scrollbars-2';
+import cartlogo from './Img/cart.png'
+
+
+
+
 
 const Cart = () => {
-  const { cart } = useCartContext();
+  const { cart, total_price, shipping_fee } = useCartContext();
   // console.log(cart);
 
   if (cart.length === 0) {
@@ -31,24 +38,50 @@ const Cart = () => {
           <h2 class="mb-4">Yummy Cart</h2>
         </div>
       </div>
-      <Wrapper>
-        <div className="cart_container">
-          <div className="cart_heading grid grid-five-column">
-            <p>Item</p>
-            <p className="cart-hide">Price</p>
-            <p>Quantity</p>
-            <p className="cart-hide">Subtotal</p>
-            <p>Remove</p>
-          </div>
-          <hr />
+      <div className="cart_data_itm">
+        <Wrapper>
+          <div className="cart_container">
+            <div className="cart_heading grid grid-five-column">
+              <p>Item</p>
+              <p className="cart-hide">Price</p>
+              <p>Quantity</p>
+              <p className="cart-hide">Subtotal</p>
+              <p>Remove</p>
+            </div>
+            <hr />
 
-          <div className="cart-item">
-            {cart.map((curElem) => {
-              return <CartItem key={curElem.name} {...curElem} />;
-            })}
+            <div className="cart-item">
+              {/* <Scrollbars style={{ height: 600 }} className="cart-item"> */}
+              {cart.map((curElem) => {
+                return <CartItem key={curElem.name} {...curElem} />;
+              })}
+              {/* </Scrollbars> */}
+            </div>
+          </div>
+        </Wrapper >
+
+        {/* order total_amount */}
+        <div className="order-total--amount">
+          <div className="order-total--subdata">
+            <div className="final_order">
+              <p>Total Order : </p>
+              <p>
+                <Formateprice price={total_price} />
+              </p>
+            </div>
+
+            <hr />
+
+            <div id="btndiv">
+              <Link to="/bookorder">
+                {/* <button type="submit" id="buttonorder">Order Now</button> */}
+                <button class="button"> Order Now <img src={cartlogo} alt="icon" id='cart' />
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
-      </Wrapper>
+      </div>
     </>
   );
 };
@@ -62,7 +95,10 @@ const Wrapper = styled.section`
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 3px 3px 0px 5px rgb(244 159 4 / 20%);
   width: 85%;
-  margin: 25px auto;
+  // margin-left:20px;
+  max-height: 460px;
+  overflow-y: scroll;
+  margin: 25px -60px 25px 110px;
   .grid-four-column {
     grid-template-columns: repeat(4, 1fr);
   }

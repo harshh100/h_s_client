@@ -5,7 +5,7 @@ const CartContext = createContext();
 
 const getLocalCartData = () => {
     let localCartData = localStorage.getItem("hpCart");
-    if (!localCartData) {
+    if (!localCartData || localCartData === "undefined") {
         return [];
     } else {
         return JSON.parse(localCartData);
@@ -15,9 +15,8 @@ const getLocalCartData = () => {
 const initialState = {
     // cart: [],
     cart: getLocalCartData(),
-    total_items: "",
-    total_amount: "",
-    shipping_fee: 100,
+    total_item: "",
+    total_price: "",
 };
 
 const CartProvider = ({ children }) => {
@@ -25,7 +24,7 @@ const CartProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const addToCart = (name, price, stock, amount) => {
-        console.log("amount of " + name + " is : " + amount);
+        // console.log("amount of " + name + " is : " + amount);
         alert(name + " added to your Cart !!")
         dispatch({ type: "ADD_TO_CART", payload: { name, price, stock, amount } });
     };
@@ -50,6 +49,9 @@ const CartProvider = ({ children }) => {
     // get vs set
 
     useEffect(() => {
+        dispatch({ type: "CART_TOTAL_ITEM" });
+        dispatch({ type: "CART_TOTAL_PRICE" });
+
         const cartHasChanged = JSON.stringify(state.cart) !== localStorage.getItem("hpCart");
         if (cartHasChanged) {
             localStorage.setItem("hpCart", JSON.stringify(state.cart));

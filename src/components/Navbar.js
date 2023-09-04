@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import cart_img from './Img/cart.png';
 import { useCartContext } from "../context/cart_context";
 
+
 export default function Navbar() {
 
-    const { cart } = useCartContext();
-    let no_itms = cart.length;
+    const { total_item } = useCartContext();
+    // console.log(total_item);
+    // let no_itms = cart.length;
     return (
         <>
             <nav className='Navmain'>
@@ -30,7 +32,7 @@ export default function Navbar() {
                             <Link to="/cart" className='cart-trolley--link fontco'>
                                 <img src={cart_img} alt="Cart" className='cart-trolley cart_img' />
                                 {/* <FiShoppingCart className="cart-trolley" /> */}
-                                <span className="cart-total--item"> {no_itms} </span>
+                                <span className="cart-total--item"> {total_item} </span>
                             </Link>
                         </li>
                     </ul >
