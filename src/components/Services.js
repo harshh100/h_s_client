@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { TbTruckDelivery } from "react-icons/tb";
-import { MdSecurity } from "react-icons/md";
+import { BiSolidOffer } from "react-icons/bi";
+import { BiMedal } from "react-icons/bi";
 import { GiReceiveMoney } from "react-icons/gi";
 import { RiSecurePaymentLine } from "react-icons/ri";
 
@@ -11,16 +11,16 @@ const Services = () => {
         <div className="grid grid-three-column">
           <div className="services-1">
             <div>
-              <TbTruckDelivery className="icon" />
-              <h3>Free Delivery on ₹150+ Order</h3>
+              <BiSolidOffer className="icon" />
+              <h3>Special Discount</h3>
             </div>
           </div>
 
           <div className="services-2">
             <div className="services-colum-2">
               <div>
-                <MdSecurity className="icon" />
-                <h3>Non-contact Shipping</h3>
+                <BiMedal className="icon" />
+                <h3>Best Quality</h3>
               </div>
             </div>
             <div className="services-colum-2">
