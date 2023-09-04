@@ -541,6 +541,12 @@ p {
   background-color: #00000000;
 }
 
+.cart-button img,
+svg {
+  vertical-align: middle;
+  background: none;
+}
+
 .dennis-maindish {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);

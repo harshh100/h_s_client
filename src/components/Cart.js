@@ -3,36 +3,36 @@ import { useCartContext } from "../context/cart_context";
 import CartItem from "./CartItem";
 
 const Cart = () => {
-    const { cart } = useCartContext();
-    console.log(cart);
-    return (
-        <>
-            <div class="row justify-content-center today_sty_text">
-                <div class="col-md-7 text-center heading-section ftco-animate pop-outin">
-                    <span class="subheading">Your</span>
-                    <h2 class="mb-4">Yummy Cart</h2>
-                </div>
-            </div>
-            <Wrapper>
-                <div className="cart_container">
-                    <div className="cart_heading grid grid-five-column">
-                        <p>Item</p>
-                        <p className="cart-hide">Price</p>
-                        <p>Quantity</p>
-                        <p className="cart-hide">Subtotal</p>
-                        <p>Remove</p>
-                    </div>
-                    <hr />
+  const { cart } = useCartContext();
+  // console.log(cart);
+  return (
+    <>
+      <div class="row justify-content-center today_sty_text">
+        <div class="col-md-7 text-center heading-section ftco-animate pop-outin">
+          <span class="subheading">Your</span>
+          <h2 class="mb-4">Yummy Cart</h2>
+        </div>
+      </div>
+      <Wrapper>
+        <div className="cart_container">
+          <div className="cart_heading grid grid-five-column">
+            <p>Item</p>
+            <p className="cart-hide">Price</p>
+            <p>Quantity</p>
+            <p className="cart-hide">Subtotal</p>
+            <p>Remove</p>
+          </div>
+          <hr />
 
-                    <div className="cart-item">
-                        {cart.map((curElem) => {
-                            return <CartItem key={curElem.name} {...curElem} />;
-                        })}
-                    </div>
-                </div>
-            </Wrapper>
-        </>
-    );
+          <div className="cart-item">
+            {cart.map((curElem) => {
+              return <CartItem key={curElem.name} {...curElem} />;
+            })}
+          </div>
+        </div>
+      </Wrapper>
+    </>
+  );
 };
 
 const Wrapper = styled.section`
@@ -53,7 +53,7 @@ const Wrapper = styled.section`
     display:grid;
     grid-template-columns: repeat(4, 1fr) 0.3fr;
     text-align: center;
-    align-items: center;
+    align-items: start;
   }
   .cart-heading {
     text-align: center;
@@ -133,16 +133,18 @@ const Wrapper = styled.section`
     justify-content: center;
     align-items: center;
     gap: 2.4rem;
-    font-size: 1.4rem;
+    font-size:16px;
 
     button {
       border: none;
-      background-color: #fff;
+      color: #f49f04;
       cursor: pointer;
+      padding: 2px;
+      border-radius: 5px;
     }
 
     .amount-style {
-      font-size: 2.4rem;
+      font-size: 20px;
     }
   }
 
