@@ -1,14 +1,32 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { useCartContext } from "../context/cart_context";
 import CartItem from "./CartItem";
 
 const Cart = () => {
   const { cart } = useCartContext();
   // console.log(cart);
+
+  if (cart.length === 0) {
+    return (
+      <div className="emt_cart">
+        <div class="row justify-content-center today_sty_text">
+          <div class="col-md-7 text-center heading-section ftco-animate pop-outin">
+            <span class="subheading">Your</span>
+            <h2 class="mb-4">Yummy Cart Is Empty !!</h2>
+            <div>
+              <Link to='/menu'>Add Items</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
       <div class="row justify-content-center today_sty_text">
-        <div class="col-md-7 text-center heading-section ftco-animate pop-outin">
+        <div class="col-md-7 text-center heading-section ftco-animate pop-outinf">
           <span class="subheading">Your</span>
           <h2 class="mb-4">Yummy Cart</h2>
         </div>

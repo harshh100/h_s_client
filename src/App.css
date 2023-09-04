@@ -391,6 +391,28 @@ p {
 
 }
 
+.emt_cart {
+  margin: 140px;
+}
+
+.emt_cart a {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  border: 2px solid #f49f04;
+  border-radius: 24px;
+  padding: 8px 40px;
+  transition: 0.4s linear;
+
+}
+
+.emt_cart a:hover {
+  color: black;
+  background: #f49f04;
+  ;
+}
+
+
 .about a:hover {
   color: black;
   background: #f49f04;
@@ -608,6 +630,10 @@ h2 {
 /* subtle zoom to attention and then back */
 .pop-outin {
   animation: 2s anim-popoutin ease infinite;
+}
+
+.pop-outinf {
+  animation: 2s anim-popoutin linear;
 }
 
 @keyframes anim-popoutin {
@@ -1143,7 +1169,6 @@ footer .footer-col .social-links a:hover {
   color: black;
   text-decoration: none;
   border: 2px solid #f49f04;
-  ;
   border-radius: 24px;
   padding: 8px 40px;
   transition: 0.4s linear;
