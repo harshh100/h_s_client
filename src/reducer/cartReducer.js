@@ -3,15 +3,30 @@ const cartReducer = (state, action) => {
     if (action.type === "ADD_TO_CART") {
         let { name, price, stock, amount } = action.payload;
         // console.log(state.cart);
-        let cartProduct = {
-            name: name,
-            price: price,
-            stock: stock,
-            amount: amount,
-        }
-        return {
-            ...state,
-            cart: [...state.cart, cartProduct],
+        const existingItemIndex = state.cart.findIndex(itm => itm.name === name);
+
+        if (existingItemIndex !== -1) {
+            // If the item already exists, increment the amount
+            // console.log("normal : " + state.cart[existingItemIndex].amount)
+            // console.log("addToCart was called from:");
+            // console.trace();
+            state.cart[existingItemIndex].amount += 1;
+            // console.log("++ : " + state.cart[existingItemIndex].amount)
+            return {
+                ...state,
+            }
+        } else {
+
+            let cartProduct = {
+                name: name,
+                price: price,
+                stock: stock,
+                amount: amount,
+            }
+            return {
+                ...state,
+                cart: [...state.cart, cartProduct],
+            }
         }
     }
 
@@ -27,16 +42,19 @@ const cartReducer = (state, action) => {
     }
 
     if (action.type === "INCREASE_ANOUNT") {
-        // console.log(action.type);
-        let name = action.payload;
+        // console.log(action.payload);
+        let { name, stock } = action.payload;
         let t_cart = state.cart;
         // console.log("state : " + JSON.stringify(state.cart));
         // console.log("Cart" + JSON.stringify(t_cart[0]) + "\n" + "name : " + name);
         const updatedCart = t_cart.map(item => {
             if (item.name === name) {
+
+                // let new_amount = 1;
                 return {
                     ...item,
-                    amount: item.amount + 1,
+                    amount: item.amount < stock ? item.amount + 1 : stock,
+                    // amount: item.amount + 1,
                 };
             }
             return item;
@@ -50,7 +68,7 @@ const cartReducer = (state, action) => {
 
     if (action.type === "DECREASE_ANOUNT") {
         // console.log(action.type);
-        let name = action.payload;
+        let { name, stock } = action.payload;
         let t_cart = state.cart;
         // console.log("state : " + JSON.stringify(state.cart));
         // console.log("Cart" + JSON.stringify(t_cart[0]) + "\n" + "name : " + name);
@@ -58,7 +76,8 @@ const cartReducer = (state, action) => {
             if (item.name === name) {
                 return {
                     ...item,
-                    amount: item.amount - 1,
+                    amount: item.amount > 1 ? item.amount - 1 : 1,
+                    // amount: item.amount - 1,
                 };
             }
             return item;

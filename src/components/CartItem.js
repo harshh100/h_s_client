@@ -14,6 +14,7 @@ const CartItem = ({ name, price, stock, amount }) => {
     //     // amount < stock ? setAmount(amount + 1) : setAmount(stock);
     // };
 
+    // console.log(name, price, amount, stock);
     return (
         <div className="cart_heading grid grid-five-column">
             <div className="cart-image--name">
@@ -29,6 +30,7 @@ const CartItem = ({ name, price, stock, amount }) => {
             {/* Quantity  */}
             <CartAmountToggle
                 name={name}
+                stock={stock}
                 amount={amount}
                 setDecrease={setDecrease}
                 setIncrease={setIncrease}
