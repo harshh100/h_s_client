@@ -13,6 +13,8 @@ import Aboutus from './components/Aboutus';
 import Footer from './components/Footer';
 import Unknownurl from './components/Unknownurl';
 import Cart from './components/Cart';
+import { ToastContainer, Toaster } from 'react-hot-toast';
+
 
 function App() {
   return (
@@ -21,6 +23,9 @@ function App() {
         <div className="RouterDiv">
           <Router>
             <Navbar />
+            <div>
+              <Toaster position='top-center' reverseOrder={false} containerStyle={{ height: "fit-content" }} />
+            </div>
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='/about' element={<Aboutus />} />

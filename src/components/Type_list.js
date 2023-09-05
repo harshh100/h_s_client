@@ -42,7 +42,9 @@ function Type_list(props) {
                                         {/* </button> */}
                                     </span>
                                 </button>
+
                             </div>
+
                         </div>
                     </div>
 

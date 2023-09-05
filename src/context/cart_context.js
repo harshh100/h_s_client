@@ -1,5 +1,6 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
 import reducer from "../reducer/cartReducer"
+import toast, { Toaster } from 'react-hot-toast';
 
 const CartContext = createContext();
 
@@ -25,7 +26,8 @@ const CartProvider = ({ children }) => {
 
     const addToCart = (name, price, stock, amount) => {
         // console.log("amount of " + name + " is : " + amount);
-        alert(name + " added to your Cart !!")
+        // alert(name + " added to your Cart !!")
+        toast.success(name + " added to your Cart !!");
         dispatch({ type: "ADD_TO_CART", payload: { name, price, stock, amount } });
     };
 
