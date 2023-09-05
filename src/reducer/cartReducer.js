@@ -15,6 +15,7 @@ const cartReducer = (state, action) => {
             // console.log("++ : " + state.cart[existingItemIndex].amount)
             return {
                 ...state,
+                cart: [...state.cart],
             }
         } else {
 
