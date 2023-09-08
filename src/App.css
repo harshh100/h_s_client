@@ -665,6 +665,36 @@ svg {
   margin-bottom: 0px;
 }
 
+.receipt_data_itm {
+  align-items: stretch;
+  margin-top: 30px;
+}
+
+.receipt-total--amount {
+  width: 50%;
+  margin: 0.8rem auto;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  .order-total--subdata {
+    border: 0.1rem solid #f0f0f0;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    gap: 1.8rem;
+    padding: 3.2rem;
+  }
+}
+
+.receipt_order {
+  width: fit-content;
+  display: flex;
+  margin: 0px auto;
+}
+
 /* @media(max-width: black) {
   .grid-five-column {
     grid-template-columns: 1.5fr 1fr 0.5fr;

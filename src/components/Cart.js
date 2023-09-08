@@ -1,18 +1,31 @@
+import React, { useRef } from 'react';
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/cart_context";
 import CartItem from "./CartItem";
 import Formateprice from '../helper/Formateprice';
-import { Scrollbars } from 'react-custom-scrollbars-2';
 import cartlogo from './Img/cart.png'
-
-
-
+import Receipt from './Receipt';
+import { saveAs } from 'file-saver';
+// import { useReactToPrint } from 'react-to-print';
+import { ReactToPrint } from 'react-to-print';
+import html2pdf from 'html2pdf.js';
 
 
 const Cart = () => {
-  const { cart, total_price, shipping_fee } = useCartContext();
+  const { cart, total_price } = useCartContext();
   // console.log(cart);
+
+  function printDocument() {
+    const contentElement = document.getElementById('receipt');
+    // Image URL
+    const imageUrl = './Img/h_&_s_black.png';
+
+    // Convert HTML to PDF
+    html2pdf().from(contentElement).set({
+      margin: [-5, -7, 10, 10] // top, right, bottom, left
+    }).save('receipt.pdf');
+  }
 
   if (cart.length === 0) {
     return (
@@ -78,9 +91,15 @@ const Cart = () => {
                 <button class="button"> Order Now <img src={cartlogo} alt="icon" id='cart' />
                 </button>
               </Link>
+              {/* <button onClick={printDocument}>Generate Receipt</button> */}
+
             </div>
+            {/* <button onClick={generatePDF}>Generate Receipt</button> */}
           </div>
         </div>
+      </div>
+      <div style={{ display: 'none' }}>
+        <Receipt />
       </div>
     </>
   );

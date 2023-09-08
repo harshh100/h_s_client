@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Logo from './Img/h_&_s_black.png'
 import { Link } from "react-router-dom";
 import cart_img from './Img/cart.png';

@@ -4,7 +4,6 @@ import Imgbur from './Img/burgerimg-nobg.png'
 import cart from './Img/cart.png'
 import { Link } from "react-router-dom";
 import Type_list from './Type_list'
-import today_offer from './Img/today_offer.png'
 import Services from './Services';
 
 const today_special = [{ name: 'Masala Maggi', price: 40, ingredient: 'Maggi Noodles, Maggi Masala, Onion, Tomato, Capsicum' }, { name: 'Cheese Chilly Garlic Toast', price: 90, ingredient: 'Bread, Cheese, Chilly, Garlic' }, { name: 'Mexican Grilled', price: 80, ingredient: 'Bread,Mexican Salsa' }]

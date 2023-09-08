@@ -6,15 +6,7 @@ import { useCartContext } from "../context/cart_context";
 
 const CartItem = ({ name, price, stock, amount }) => {
     const { removeItem, setIncrease, setDecrease } = useCartContext();
-    // const setDecrease = () => {
-    //     // amount > 1 ? setAmount(amount - 1) : setAmount(1);
-    // };
 
-    // const setIncrease = () => {
-    //     // amount < stock ? setAmount(amount + 1) : setAmount(stock);
-    // };
-
-    // console.log(name, price, amount, stock);
     return (
         <div className="cart_heading grid grid-five-column">
             <div className="cart-image--name">
