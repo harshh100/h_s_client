@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 import Unknownurl from './components/Unknownurl';
 import Cart from './components/Cart';
 import { Toaster } from 'react-hot-toast';
-import Receipt from './components/Receipt';
+// import Receipt from './components/Receipt';
 
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
               <Route path='/contact' element={<Contact />} />
               <Route path='/menu' element={<Menu />} />
               <Route path='/cart' element={<Cart />} />
-              <Route path='/receipt' element={<Receipt />} />
+              {/* <Route path='/receipt' element={<Receipt />} /> */}
               <Route path='*' element={<Unknownurl />} />
             </Routes>
             <Footer />
