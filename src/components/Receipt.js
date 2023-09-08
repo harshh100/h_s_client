@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useCartContext } from "../context/cart_context";
 import Formateprice from '../helper/Formateprice';
-import cartlogo from './Img/cart.png'
+// import cartlogo from './Img/cart.png'
 import Logo from './Img/h_&_s_black.png'
 
 import React from "react";
 import FormatPrice from "../helper/Formateprice";
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
+// import html2canvas from 'html2canvas';
+// import jsPDF from 'jspdf';
 // import { html2pdf } from "html2pdf.js";
-import html2pdf from 'html2pdf.js';
+// import html2pdf from 'html2pdf.js';
 
 // import { useCartContext } from "../context/cart_context";
 
@@ -18,15 +18,6 @@ const Receipt = () => {
   const { cart, total_price } = useCartContext();
   // console.log(cart);
 
-
-  function printDocument() {
-    const contentElement = document.getElementById('receipt');
-    // Image URL
-    const imageUrl = './Img/h_&_s_black.png';
-
-    // Convert HTML to PDF
-    html2pdf().from(contentElement).save('receipt.pdf');
-  }
 
   return (
     <div id="receipt">
@@ -93,20 +84,6 @@ const Receipt = () => {
           </div>
         </Wrapper >
 
-        {/* order total_amount */}
-        {/* <div className="receipt-total--amount">
-          <div className="order-total--subdata">
-            <div className="final_order">
-              <p>Total Order : </p>
-              <p>
-                <Formateprice price={total_price} />
-              </p>
-            </div>
-
-            <hr />
-
-          </div>
-        </div> */}
       </div>
     </div>
   );
