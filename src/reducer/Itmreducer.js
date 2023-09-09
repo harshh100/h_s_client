@@ -8,9 +8,13 @@ const ItemReducer = (state, action) => {
             };
 
         case "SET_API_DATA":
-            const featureData = action.payload.filter((curElem) => {
-                return curElem.featured === true;
-            });
+            // const featureData = action.payload.filter((curElem) => {
+            //     return curElem.featured === true;
+            // });
+            const featureData = action.payload.reduce((subitms, itm) => {
+                subitms.push(...itm.subitms.filter((subitm) => subitm.featured === true));
+                return subitms;
+            }, []);
 
             return {
                 ...state,

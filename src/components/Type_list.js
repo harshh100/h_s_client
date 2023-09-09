@@ -22,9 +22,9 @@ function Type_list(props) {
         <>
             {
                 props.types.map(type => (
-                    <div className="dennis-manu" key={type.name}>
+                    <div className="dennis-manu" key={type.SubName}>
                         <div className='dennis-dish'>
-                            {type.name}
+                            {type.SubName}
                             <p className='Ingredient'>Ingredient : {type.ingredient} </p>
                         </div>
                         <div className='dennis-price'>
