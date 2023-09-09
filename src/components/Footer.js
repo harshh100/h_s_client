@@ -3,13 +3,13 @@ import { useName } from '../context/Itmcontext';
 
 
 const Footer = () => {
-    const { name } = useName();
+    // const { name } = useName();
     return (
-        <footer class="footer">
-            <div class="con">
+        <footer className="footer">
+            <div className="con">
                 <hr />
-                <div class="row">
-                    <div class="footer-col">
+                <div className="row">
+                    <div className="footer-col">
                         <h4>H & S</h4>
                         <ul>
                             <li><a href="#">about us</a></li>
@@ -19,7 +19,7 @@ const Footer = () => {
                             <li><a href="#">FAQ</a></li>
                         </ul>
                     </div>
-                    <div class="footer-col">
+                    <div className="footer-col">
                         <h4>Payment Options</h4>
                         <ul>
                             <li><a href="#">Gpay</a></li>
@@ -28,7 +28,7 @@ const Footer = () => {
                             <li><a href="#">UPI</a></li>
                         </ul>
                     </div>
-                    <div class="footer-col">
+                    <div className="footer-col">
                         <h4>Buy</h4>
                         <ul>
                             <li><a href="#">Pizza</a></li>
@@ -52,7 +52,7 @@ const Footer = () => {
                 </div>
                 <hr />
             </div>
-            <p className="text-center">©{name} Hot & Spicy 2023</p>
+            <p className="text-center">© Hot & Spicy 2023</p>
         </footer>
         // <footer>
         //     <hr />

@@ -1,6 +1,7 @@
 import React from 'react'
 import Type_list from './Type_list'
 import { Scrollbars } from 'react-custom-scrollbars-2';
+import { useAppContext } from '../context/Itmcontext';
 
 
 const menu = [{
@@ -343,13 +344,17 @@ const menu = [{
 
 
 export default function Itm_list() {
+
+    const { products, featureProducts } = useAppContext();
+    console.log(products);
+
     return (
         <>
             <div className="dennis-head">
-                <div class="row justify-content-center menu_sty_text">
-                    <div class="col-md-7 text-center heading-section ftco-animate pop-outinf">
-                        <span class="subheading">Our</span>
-                        <h2 class="mb-4">Menu</h2>
+                <div className="row justify-content-center menu_sty_text">
+                    <div className="col-md-7 text-center heading-section ftco-animate pop-outinf">
+                        <span className="subheading">Our</span>
+                        <h2 className="mb-4">Menu</h2>
                     </div>
                 </div>
             </div>

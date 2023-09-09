@@ -24,7 +24,7 @@ export default class home extends Component {
             <div id="btndiv">
               <Link to="/menu">
                 {/* <button type="submit" id="buttonorder">Order Now</button> */}
-                <button class="button"> Order Now <img src={cart} alt="icon" id='cart' />
+                <button className="button"> Order Now <img src={cart} alt="icon" id='cart' />
                 </button>
               </Link>
             </div>
@@ -33,10 +33,10 @@ export default class home extends Component {
         <div className='line_class'>
           <hr />
         </div>
-        <div class="row justify-content-center today_sty_text">
-          <div class="col-md-7 text-center heading-section ftco-animate pop-outin">
-            <span class="subheading">Today's</span>
-            <h2 class="mb-4">Special</h2>
+        <div className="row justify-content-center today_sty_text">
+          <div className="col-md-7 text-center heading-section ftco-animate pop-outin">
+            <span className="subheading">Today's</span>
+            <h2 className="mb-4">Special</h2>
           </div>
         </div>
         <div className='today_special'>
@@ -48,10 +48,10 @@ export default class home extends Component {
         <div className='line_class'>
           <hr />
         </div>
-        <div class="row justify-content-center sevices_sty_text">
-          <div class="col-md-7 text-center heading-section ftco-animate pop-outin">
-            <span class="subheading">Our</span>
-            <h2 class="mb-4">Services</h2>
+        <div className="row justify-content-center sevices_sty_text">
+          <div className="col-md-7 text-center heading-section ftco-animate pop-outin">
+            <span className="subheading">Our</span>
+            <h2 className="mb-4">Services</h2>
           </div>
         </div>
         <Services></Services>

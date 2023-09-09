@@ -26,10 +26,10 @@ const Receipt = () => {
       <div className="logo">
         <img id="aboutLogo" src={Logo} alt="" />
       </div>
-      <div class="row justify-content-center today_sty_text">
-        <div class="col-md-7 text-center heading-section ftco-animate pop-outinf">
-          <span class="subheading">Your</span>
-          <h2 class="mb-4">Order Receipt</h2>
+      <div className="row justify-content-center today_sty_text">
+        <div className="col-md-7 text-center heading-section ftco-animate pop-outinf">
+          <span className="subheading">Your</span>
+          <h2 className="mb-4">Order Receipt</h2>
         </div>
       </div>
       <div className="receipt_data_itm">

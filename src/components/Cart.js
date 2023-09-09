@@ -30,10 +30,10 @@ const Cart = () => {
   if (cart.length === 0) {
     return (
       <div className="emt_cart">
-        <div class="row justify-content-center today_sty_text">
-          <div class="col-md-7 text-center heading-section ftco-animate pop-outin">
-            <span class="subheading">Your</span>
-            <h2 class="mb-4">Yummy Cart Is Empty !!</h2>
+        <div className="row justify-content-center today_sty_text">
+          <div className="col-md-7 text-center heading-section ftco-animate pop-outin">
+            <span className="subheading">Your</span>
+            <h2 className="mb-4">Yummy Cart Is Empty !!</h2>
             <div>
               <Link to='/menu'>Add Items</Link>
             </div>
@@ -45,10 +45,10 @@ const Cart = () => {
 
   return (
     <>
-      <div class="row justify-content-center today_sty_text">
-        <div class="col-md-7 text-center heading-section ftco-animate pop-outinf">
-          <span class="subheading">Your</span>
-          <h2 class="mb-4">Yummy Cart</h2>
+      <div className="row justify-content-center today_sty_text">
+        <div className="col-md-7 text-center heading-section ftco-animate pop-outinf">
+          <span className="subheading">Your</span>
+          <h2 className="mb-4">Yummy Cart</h2>
         </div>
       </div>
       <div className="cart_data_itm">
@@ -88,7 +88,7 @@ const Cart = () => {
             <div id="btndiv">
               <Link to="/bookorder">
                 {/* <button type="submit" id="buttonorder">Order Now</button> */}
-                <button class="button"> Order Now <img src={cartlogo} alt="icon" id='cart' />
+                <button className="button"> Order Now <img src={cartlogo} alt="icon" id='cart' />
                 </button>
               </Link>
 
