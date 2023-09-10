@@ -40,6 +40,14 @@ const orderReducer = (state, action) => {
                 receiptNo: rn,
             };
 
+        case "VERIFICATIOIN":
+            // const rn = action.payload + state.userName;
+            toast.success("Verified");
+            return {
+                ...state,
+                // otpverified:false,
+                otpverified: true,
+            };
 
         case "SET_API_DATA":
             // const featureData = action.payload.filter((curElem) => {
