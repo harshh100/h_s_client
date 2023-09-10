@@ -15,7 +15,7 @@ import { useOrderContext } from '../context/Order_context';
 
 const Cart = () => {
   const { cart, total_price } = useCartContext();
-  const { userName, userPhone, setuserName, setuserPhone } = useOrderContext();
+  const { userName, userPhone, userotp, setuserName, setuserPhone, sendotp, setuserotp } = useOrderContext();
   // console.log(cart);
 
   function printDocument() {
@@ -87,11 +87,11 @@ const Cart = () => {
                 <p>Mobile Number : </p>
                 <span>+91</span>
                 <input class="f_inp" id="Phone_No" name="Phone_No" value={userPhone} onChange={(e) => setuserPhone(e.target.value)} placeholder="  Enter Phone No" type="tel" maxLength="10" />
-                <button> Send OTP</button>
+                <button onClick={() => sendotp(userPhone, userName)}> Send OTP</button>
               </div>
               <div className="final_order">
                 <p>OTP : </p>
-                <input class="f_inp" id="OTP" name="OTP" placeholder="  Enter OTP" type="number" />
+                <input class="f_inp" id="OTP" name="OTP" value={userotp} onChange={(e) => setuserotp(e.target.value)} placeholder="  Enter OTP" type="number" maxLength="6" />
                 <button> Verify OTP</button>
               </div>
               <div className="final_order">

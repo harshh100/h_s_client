@@ -7,7 +7,15 @@ const orderReducer = (state, action) => {
             // console.log("name : " + action.payload)
             return {
                 ...state,
+                otpverified: false,
                 userName: action.payload,
+            };
+
+        case "SETOTP":
+            // console.log("otp : " + action.payload)
+            return {
+                ...state,
+                userotp: action.payload,
             };
 
         case "SETUSERPHONE":
@@ -20,6 +28,7 @@ const orderReducer = (state, action) => {
             }
             return {
                 ...state,
+                otpverified: false,
                 userPhone: action.payload,
             };
 
@@ -27,6 +36,7 @@ const orderReducer = (state, action) => {
             const rn = action.payload + state.userName;
             return {
                 ...state,
+                // otpverified:false,
                 receiptNo: rn,
             };
 
