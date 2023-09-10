@@ -10,10 +10,12 @@ import Receipt from './Receipt';
 // import { useReactToPrint } from 'react-to-print';
 // import { ReactToPrint } from 'react-to-print';
 import html2pdf from 'html2pdf.js';
+import { useOrderContext } from '../context/Order_context';
 
 
 const Cart = () => {
   const { cart, total_price } = useCartContext();
+  const { userName, userPhone, setuserName, setuserPhone } = useOrderContext();
   // console.log(cart);
 
   function printDocument() {
@@ -76,15 +78,33 @@ const Cart = () => {
         {/* order total_amount */}
         <div className="order-total--amount">
           <div className="order-total--subdata">
-            <div className="final_order">
-              <p>Total Order : </p>
-              <p>
-                <Formateprice price={total_price} />
-              </p>
+            <div className="order-info">
+              <div className="final_order">
+                <p>Name : </p>
+                <input class="f_inp" id="Username" name="Username" value={userName} onChange={(e) => setuserName(e.target.value)} placeholder="  Enter Name" type="text" />
+              </div>
+              <div className="final_order">
+                <p>Mobile Number : </p>
+                <span>+91</span>
+                <input class="f_inp" id="Phone_No" name="Phone_No" value={userPhone} onChange={(e) => setuserPhone(e.target.value)} placeholder="  Enter Phone No" type="tel" maxLength="10" />
+                <button> Send OTP</button>
+              </div>
+              <div className="final_order">
+                <p>OTP : </p>
+                <input class="f_inp" id="OTP" name="OTP" placeholder="  Enter OTP" type="number" />
+                <button> Verify OTP</button>
+              </div>
+              <div className="final_order">
+                <p>Total Order : </p>
+                <p>
+                  <Formateprice price={total_price} />
+                </p>
+              </div>
             </div>
-
             <hr />
-
+            <div className="final_order">
+              <p>You Can make Order Only After Verifing OTP  * </p>
+            </div>
             <div id="btndiv">
               <Link to="/bookorder">
                 {/* <button type="submit" id="buttonorder">Order Now</button> */}
@@ -209,6 +229,7 @@ const Wrapper = styled.section`
 
     button {
       border: none;
+      background: none;
       color: #f49f04;
       cursor: pointer;
       padding: 2px;

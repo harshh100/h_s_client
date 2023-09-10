@@ -6,7 +6,7 @@
 
 /* Home */
 * {
-  background-color: white;
+  /* background-color: white; */
 }
 
 h2 {
@@ -14,7 +14,7 @@ h2 {
 }
 
 .mainapp {
-  background-color: black;
+  /* background-color: black; */
   display: flex;
   flex-direction: row;
 }
@@ -619,15 +619,31 @@ svg {
   width: min-content;
 }
 
+.tost_msg {
+  background: none;
+}
+
 .cart_data_itm {
-  display: flex;
+  /* display: flex; */
   align-items: stretch;
   margin-top: 30px;
 }
 
+.order-info input {
+  height: 28px;
+  border-radius: 8px;
+  border: #f49f04 solid 2px;
+}
+
+.order-info button {
+  height: 28px;
+  border-radius: 8px;
+  border: #f49f04 solid 2px;
+}
+
 .order-total--amount {
   width: 50%;
-  margin: 0.8rem 0;
+  margin: 2.8rem auto;
   text-transform: capitalize;
   display: flex;
   flex-direction: column;
@@ -639,7 +655,7 @@ svg {
     display: flex;
     margin: auto;
     flex-direction: column;
-    gap: 1.8rem;
+    gap: 0.8rem;
     padding: 3.2rem;
   }
 

@@ -1,6 +1,8 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
 import reducer from "../reducer/cartReducer"
 import toast from 'react-hot-toast';
+import axios from "axios";
+
 
 const CartContext = createContext();
 

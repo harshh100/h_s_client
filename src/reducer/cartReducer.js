@@ -123,6 +123,33 @@ const cartReducer = (state, action) => {
         };
     }
 
+    if (action.type === "setuserName") {
+        // console.log(action.type);
+        const { name } = action.payload;
+        return {
+            ...state,
+            userName: name,
+        };
+    }
+
+    if (action.type === "SETUSERPHONE") {
+        // console.log(action.type);
+        const { phone } = action.payload;
+        return {
+            ...state,
+            userPhone: phone,
+        };
+    }
+
+    // if (action.type === "SENDOTP") {
+    //     // console.log(action.type);
+    //     const { status } = action.payload;
+    //     return {
+    //         ...state,
+    //         verified: false,
+    //     };
+    // }
+
 
 
     return state;

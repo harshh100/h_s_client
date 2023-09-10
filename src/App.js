@@ -24,8 +24,8 @@ function App() {
         <div className="RouterDiv">
           <Router>
             <Navbar />
-            <div>
-              <Toaster position='top-center' reverseOrder={false} containerStyle={{ height: "fit-content" }} />
+            <div className='tost_msg'>
+              <Toaster position='top-center' reverseOrder={false} />
             </div>
             <Routes>
               <Route path='/' element={<Home />} />
