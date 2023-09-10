@@ -631,18 +631,20 @@ svg {
 
 .order-info input {
   height: 28px;
-  border-radius: 8px;
-  border: #f49f04 solid 2px;
+  border-width: 0px 0px 1px 0px;
+  margin: 0px 10px;
+  /* border-radius: 4px; */
+  /* background-color: #f4a00470; */
 }
 
-.order-info button {
+/* .order-info button {
   height: 28px;
   border-radius: 8px;
   border: #f49f04 solid 2px;
-}
+} */
 
 .order-total--amount {
-  width: 50%;
+  width: 65%;
   margin: 2.8rem auto;
   text-transform: capitalize;
   display: flex;
@@ -676,7 +678,71 @@ svg {
   }
 }
 
+
+.final_order button {
+  font-family: inherit;
+  font-size: 13px;
+  background: #f49f04;
+  color: white;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.final_order button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.final_order button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.final_order button span {
+  display: block;
+  margin-left: 0.4em;
+  transition: all 0.3s;
+}
+
+.final_order button svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+  transition: all 0.3s;
+}
+
+.final_order button .svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-right: 0.5em;
+  transition: all 0.3s;
+}
+
+.final_order button:hover .svg-wrapper {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.final_order button:hover svg {
+  transform: rotate(45deg);
+}
+
+
+
+
+
 .final_order {
+  align-items: baseline;
   display: flex;
   margin-bottom: 0px;
 }
@@ -705,10 +771,39 @@ svg {
   }
 }
 
+.cs_info {
+  width: fit-content;
+  margin: 20px auto;
+}
+
 .receipt_order {
   width: fit-content;
   display: flex;
   margin: 0px auto;
+}
+
+.receipt_logo {
+  width: -webkit-fill-available;
+  /* height: 700px; */
+  margin-top: -70px;
+  opacity: 6%;
+  z-index: 1;
+  position: absolute;
+  /* margin: auto; */
+  display: flex;
+  justify-content: center;
+}
+
+#rc_img {
+  height: 700px;
+}
+
+.rc_otp {
+  margin-right: 105px;
+}
+
+.rc_name {
+  margin-right: 93px;
 }
 
 /* @media(max-width: black) {

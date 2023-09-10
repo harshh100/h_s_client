@@ -69,6 +69,8 @@ const OrderProvider = ({ children }) => {
                 return toast.error("OTP verification failed");
             } else {
                 dispatch({ type: "VERIFICATIOIN" });
+                // dispatch({ type: "VERIFICATIOIN" });
+
             }
 
         } catch (error) {

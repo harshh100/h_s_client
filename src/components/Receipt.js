@@ -7,30 +7,37 @@ import Logo from './Img/h_&_s_black.png'
 
 import React from "react";
 import FormatPrice from "../helper/Formateprice";
+import { useOrderContext } from "../context/Order_context";
 // import html2canvas from 'html2canvas';
 // import jsPDF from 'jspdf';
 // import { html2pdf } from "html2pdf.js";
 // import html2pdf from 'html2pdf.js';
 
 // import { useCartContext } from "../context/cart_context";
-
+// { userName, userPhone, receiptNo }
 const Receipt = () => {
   const { cart, total_price } = useCartContext();
-  // console.log(cart);
-
+  const { userName, userPhone, receiptNo } = useOrderContext();
+  // console.log("userName : " + userName + ", userPhone : " + userPhone);
 
   return (
     <div id="receipt">
       {/* <button onClick={printDocument}>Generate Receipt</button> */}
 
-      <div className="logo">
-        <img id="aboutLogo" src={Logo} alt="" />
+      {/* <p>Receipt No : {receiptNo}</p> */}
+      <div className="receipt_logo">
+        <img id="rc_img" src={Logo} alt="" />
       </div>
       <div className="row justify-content-center today_sty_text">
         <div className="col-md-7 text-center heading-section ftco-animate pop-outinf">
           <span className="subheading">Your</span>
           <h2 className="mb-4">Order Receipt</h2>
         </div>
+      </div>
+      <div className="cs_info">
+        <p>Name : {userName}</p>
+        <p>Mobile No : {userPhone}</p>
+        <p>Receipt No : {receiptNo}</p>
       </div>
       <div className="receipt_data_itm">
         <Wrapper>

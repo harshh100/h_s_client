@@ -32,20 +32,38 @@ const orderReducer = (state, action) => {
                 userPhone: action.payload,
             };
 
-        case "SETRECEIPTNO":
-            const rn = action.payload + state.userName;
-            return {
-                ...state,
-                // otpverified:false,
-                receiptNo: rn,
-            };
+        // case "SETRECEIPTNO":
+        //     // function generateRandomSixDigitNumber() {
+        //     //     // Generate a random number between 100,000 and 999,999 (inclusive)
+        //     //     const min = 100000;
+        //     //     const max = 999999;
+        //     //     return Math.floor(Math.random() * (max - min + 1)) + min;
+        //     // }
+        //     // const randomSixDigitNumber = generateRandomSixDigitNumber();
+        //     // const rn = randomSixDigitNumber + state.userName;
+        //     return {
+        //         ...state,
+        //         // otpverified:false,
+        //         receiptNo: rn,
+        //     };
 
         case "VERIFICATIOIN":
-            // const rn = action.payload + state.userName;
+
+            function generateRandomSixDigitNumber() {
+                // Generate a random number between 100,000 and 999,999 (inclusive)
+                const min = 100000;
+                const max = 999999;
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            const randomSixDigitNumber = generateRandomSixDigitNumber();
+            const rn = randomSixDigitNumber + state.userName;
+            console.log("rn: " + rn)
+
             toast.success("Verified");
             return {
                 ...state,
                 // otpverified:false,
+                receiptNo: rn,
                 otpverified: true,
             };
 

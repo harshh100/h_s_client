@@ -6,6 +6,7 @@ import CartItem from "./CartItem";
 import Formateprice from '../helper/Formateprice';
 import cartlogo from './Img/cart.png'
 import Receipt from './Receipt';
+import toast from 'react-hot-toast';
 // import { saveAs } from 'file-saver';
 // import { useReactToPrint } from 'react-to-print';
 // import { ReactToPrint } from 'react-to-print';
@@ -15,7 +16,7 @@ import { useOrderContext } from '../context/Order_context';
 
 const Cart = () => {
   const { cart, total_price } = useCartContext();
-  const { userName, userPhone, userotp, setuserName, setuserPhone, sendotp, setuserotp, otpverify } = useOrderContext();
+  const { userName, userPhone, otpverified, userotp, setuserName, setuserPhone, sendotp, setuserotp, otpverify } = useOrderContext();
   // console.log(cart);
 
   function printDocument() {
@@ -27,6 +28,10 @@ const Cart = () => {
     html2pdf().from(contentElement).set({
       margin: [-5, -7, 10, 10] // top, right, bottom, left
     }).save('H&S_receipt.pdf');
+  }
+
+  function Verify_frist() {
+    return toast.error("You Need To Verify OTP FRIST!!");
   }
 
   if (cart.length === 0) {
@@ -74,13 +79,13 @@ const Cart = () => {
             </div>
           </div>
         </Wrapper >
-
+        {/* {console.log("Cart userName : " + userName + ", userPhone : " + userPhone)} */}
         {/* order total_amount */}
         <div className="order-total--amount">
           <div className="order-total--subdata">
             <div className="order-info">
               <div className="final_order">
-                <p>Name : </p>
+                <p className='rc_name'>Name : </p>
                 <input class="f_inp" id="Username" name="Username" value={userName} onChange={(e) => setuserName(e.target.value)} placeholder="  Enter Name" type="text" />
               </div>
               <div className="final_order">
@@ -88,9 +93,21 @@ const Cart = () => {
                 <span>+91</span>
                 <input class="f_inp" id="Phone_No" name="Phone_No" value={userPhone} onChange={(e) => setuserPhone(e.target.value)} placeholder="  Enter Phone No" type="tel" maxLength="10" />
                 <button onClick={() => sendotp(userPhone, userName)}> Send OTP</button>
+
+                {/* <button> */}
+                {/* <div class="svg-wrapper-1">
+                    <div class="svg-wrapper">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                      </svg>
+                    </div>
+                  </div> */}
+                {/* <span>Send</span> */}
+                {/* </button> */}
               </div>
               <div className="final_order">
-                <p>OTP : </p>
+                <p className='rc_otp'>OTP : </p>
                 <input class="f_inp" id="OTP" name="OTP" value={userotp} onChange={(e) => setuserotp(e.target.value)} placeholder="  Enter OTP" type="number" maxLength="6" />
                 <button onClick={() => otpverify(userPhone, userotp)} > Verify OTP</button>
               </div>
@@ -106,19 +123,19 @@ const Cart = () => {
               <p>You Can make Order Only After Verifing OTP  * </p>
             </div>
             <div id="btndiv">
-              <Link to="/bookorder">
-                {/* <button type="submit" id="buttonorder">Order Now</button> */}
-                <button className="button"> Order Now <img src={cartlogo} alt="icon" id='cart' />
-                </button>
-              </Link>
+              {/* <Link to="/bookorder"> */}
+              {/* <button type="submit" id="buttonorder">Order Now</button> */}
+              <button className="button" onClick={otpverified ? printDocument : Verify_frist}> Order Now <img src={cartlogo} alt="icon" id='cart' />
+              </button>
+              {/* </Link> */}
 
             </div>
-            <button onClick={printDocument}>Generate Receipt</button>
+            {/* <button >Generate Receipt</button> */}
           </div>
         </div>
       </div>
       <div style={{ display: 'none' }}>
-        <Receipt />
+        <Receipt userName={userName} userPhone={userPhone} />
       </div>
     </>
   );
