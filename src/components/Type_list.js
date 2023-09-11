@@ -32,7 +32,8 @@ function Type_list(props) {
                         </div>
                         <div className='buy_now'>
                             <div className="button">
-                                <button className="button-wrapper" onClick={() => addToCart(type.name, type.price, type.stock, 1)}>
+                                {/* {console.log("type name : " + type.name)} */}
+                                <button className="button-wrapper" onClick={() => addToCart(type.SubName, type.price, type.stock, 1)}>
                                     <div className="text">Add</div>
                                     <span className="icon">
                                         {/* <button> */}
