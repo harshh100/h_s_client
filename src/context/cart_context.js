@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer, useEffect } from "react";
 import reducer from "../reducer/cartReducer"
 import toast from 'react-hot-toast';
-import axios from "axios";
+// import axios from "axios";
 
 
 const CartContext = createContext();
@@ -29,13 +29,14 @@ const CartProvider = ({ children }) => {
     const addToCart = (name, price, stock, amount) => {
         // console.log("amount of " + name + " is : " + amount);
         // alert(name + " added to your Cart !!")
-        toast.success('"' + name + '"' + ' Added In Cart !!');
+        toast.success(`"${name}" Added In Cart !!`);
         dispatch({ type: "ADD_TO_CART", payload: { name, price, stock, amount } });
     };
 
     const removeItem = (name) => {
         // console.log(name);
-        toast.success('"' + name + '"' + ' Removed From Cart !!');
+        toast.success(`"${name}" Removed From Cart !!`);
+        // toast.success('"' + name + '"' + ' Removed From Cart !!');
         dispatch({ type: "REMOVE_ITEM", payload: name });
     };
 
