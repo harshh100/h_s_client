@@ -631,10 +631,29 @@ svg {
 
 .order-info input {
   height: 28px;
+  width: 180px;
   border-width: 0px 0px 1px 0px;
   margin: 0px 10px;
   /* border-radius: 4px; */
   /* background-color: #f4a00470; */
+}
+
+.takeover {
+  margin-right: 21px;
+}
+
+.order_warn {
+  margin-top: -10px;
+  font-size: 10px;
+  margin-bottom: -30px;
+}
+
+.Verified_icon {
+  color: green;
+}
+
+.Notverified_icon {
+  color: red;
 }
 
 /* .order-info button {

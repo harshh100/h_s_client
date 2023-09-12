@@ -11,6 +11,26 @@ const orderReducer = (state, action) => {
                 userName: action.payload,
             };
 
+        case "SETTOTIME":
+            // console.log("time : " + action.payload)
+
+            const selectedTime = action.payload;
+            const selectedHours = parseInt(selectedTime.split(':')[0]);
+
+            if (selectedHours < 10 || selectedHours >= 22) {
+                // alert('Please select a time between 10:00 AM and 10:00 PM.');
+                toast.error("Please select a time between 10:00 AM and 10:00 PM.")
+                return state;
+
+            }
+
+            // setTime(selectedTime);
+
+            return {
+                ...state,
+                totime: action.payload,
+            };
+
         case "SETOTP":
             // console.log("otp : " + action.payload)
             return {
@@ -57,9 +77,7 @@ const orderReducer = (state, action) => {
             }
             const randomSixDigitNumber = generateRandomSixDigitNumber();
             const rn = randomSixDigitNumber + state.userName;
-            console.log("rn: " + rn)
-
-            toast.success("Verified");
+            // console.log("rn: " + rn)
             return {
                 ...state,
                 // otpverified:false,

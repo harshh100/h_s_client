@@ -7,6 +7,7 @@ import Formateprice from '../helper/Formateprice';
 import cartlogo from './Img/cart.png'
 import Receipt from './Receipt';
 import toast from 'react-hot-toast';
+import { MdVerified, MdCancel } from "react-icons/md"
 // import { saveAs } from 'file-saver';
 // import { useReactToPrint } from 'react-to-print';
 // import { ReactToPrint } from 'react-to-print';
@@ -16,7 +17,7 @@ import { useOrderContext } from '../context/Order_context';
 
 const Cart = () => {
   const { cart, total_price } = useCartContext();
-  const { userName, userPhone, otpverified, userotp, setuserName, setuserPhone, sendotp, setuserotp, otpverify } = useOrderContext();
+  const { userName, userPhone, totime, otpverified, userotp, setuserName, setuserPhone, sendotp, setuserotp, otpverify, settotime } = useOrderContext();
   // console.log(cart);
 
   function printDocument() {
@@ -26,7 +27,7 @@ const Cart = () => {
 
     // Convert HTML to PDF
     html2pdf().from(contentElement).set({
-      margin: [-5, -7, 10, 10] // top, right, bottom, left
+      margin: [5, -7, 10, 10] // top, right, bottom, left
     }).save('H&S_receipt.pdf');
   }
 
@@ -86,17 +87,23 @@ const Cart = () => {
             <div className="order-info">
               <div className="final_order">
                 <p className='rc_name'>Name : </p>
-                <input class="f_inp" id="Username" name="Username" value={userName} onChange={(e) => setuserName(e.target.value)} placeholder="  Enter Name" type="text" />
+                <input className="f_inp" id="Username" name="Username" value={userName} onChange={(e) => setuserName(e.target.value)} placeholder="  Enter Name" type="text" />
+              </div>
+              <div className="final_order">
+                <p className='takeover'>Take-Over Time : </p>
+                <p>
+                  <input type="time" id="timeInput" value={totime} onChange={(e) => settotime(e.target.value)} />
+                </p>
               </div>
               <div className="final_order">
                 <p>Mobile Number : </p>
                 <span>+91</span>
-                <input class="f_inp" id="Phone_No" name="Phone_No" value={userPhone} onChange={(e) => setuserPhone(e.target.value)} placeholder="  Enter Phone No" type="tel" maxLength="10" />
+                <input className="f_inp" id="Phone_No" name="Phone_No" value={userPhone} onChange={(e) => setuserPhone(e.target.value)} placeholder="  Enter Phone No" type="tel" maxLength="10" />
                 <button onClick={() => sendotp(userPhone, userName)}> Send OTP</button>
               </div>
               <div className="final_order">
                 <p className='rc_otp'>OTP : </p>
-                <input class="f_inp" id="OTP" name="OTP" value={userotp} onChange={(e) => setuserotp(e.target.value)} placeholder="  Enter OTP" type="number" />
+                <input className="f_inp" id="OTP" name="OTP" value={userotp} onChange={(e) => setuserotp(e.target.value)} placeholder="  Enter OTP" type="number" />
                 <button onClick={() => otpverify(userPhone, userotp)} > Verify OTP</button>
               </div>
               <div className="final_order">
@@ -105,11 +112,15 @@ const Cart = () => {
                   <Formateprice price={total_price} />
                 </p>
               </div>
+              <div className="final_order">
+                <p>Verified : {otpverified ? <MdVerified className="Verified_icon" /> : <MdCancel className="Notverified_icon" />}</p>
+              </div>
+              <div className="order_warn">
+                <p>Only Verified Person Can Make Order * </p>
+              </div>
             </div>
             <hr />
-            <div className="final_order">
-              <p>You Can make Order Only After Verifing OTP  * </p>
-            </div>
+
             <div id="btndiv">
               {/* <Link to="/bookorder"> */}
               {/* <button type="submit" id="buttonorder">Order Now</button> */}

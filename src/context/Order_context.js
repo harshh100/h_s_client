@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, useEffect } from "react";
+import { createContext, useContext, useReducer } from "react";
 import toast from 'react-hot-toast';
 import reducer from '../reducer/orderReducer'
 import axios from "axios";
@@ -11,6 +11,7 @@ const initialState = {
     userPhone: "",
     receiptNo: "",
     userotp: "",
+    totime: "10:00",
     otpverified: false,
 };
 
@@ -26,6 +27,10 @@ const OrderProvider = ({ children }) => {
 
     const setuserPhone = (phone) => {
         dispatch({ type: "SETUSERPHONE", payload: phone });
+    };
+
+    const settotime = (totime) => {
+        dispatch({ type: "SETTOTIME", payload: totime });
     };
 
     const setuserotp = (otp) => {
@@ -48,7 +53,7 @@ const OrderProvider = ({ children }) => {
         try {
             // toast.loading('Sending...');
             const res = await axios.post("http://localhost:8080/api/sendotp", { phoneNumber });
-            toast.dismiss();
+            // toast.dismiss();
             const { msg } = await res.data;
             // return toast.success(msg);
             return toast.success(msg, { id: toastId });
@@ -75,6 +80,11 @@ const OrderProvider = ({ children }) => {
                 // return toast.error("OTP verification failed");
             } else {
                 dispatch({ type: "VERIFICATIOIN" });
+                return toast.success("Verified", { id: toastId });
+
+                // toast.success("Verified");
+
+
                 // dispatch({ type: "VERIFICATIOIN" });
 
             }
@@ -89,7 +99,7 @@ const OrderProvider = ({ children }) => {
     };
 
 
-    return <OrderContext.Provider value={{ ...state, setuserName, setuserPhone, sendotp, setuserotp, otpverify }}>{children}</OrderContext.Provider>
+    return <OrderContext.Provider value={{ ...state, setuserName, setuserPhone, sendotp, setuserotp, otpverify, settotime }}>{children}</OrderContext.Provider>
 
 }
 

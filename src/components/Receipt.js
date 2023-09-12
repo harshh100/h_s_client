@@ -17,7 +17,7 @@ import { useOrderContext } from "../context/Order_context";
 // { userName, userPhone, receiptNo }
 const Receipt = () => {
   const { cart, total_price } = useCartContext();
-  const { userName, userPhone, receiptNo } = useOrderContext();
+  const { userName, userPhone, receiptNo, totime } = useOrderContext();
   // console.log("userName : " + userName + ", userPhone : " + userPhone);
 
   return (
@@ -38,6 +38,7 @@ const Receipt = () => {
         <p>Name : {userName}</p>
         <p>Mobile No : {userPhone}</p>
         <p>Receipt No : {receiptNo}</p>
+        <p>Take-Over Time : {totime}</p>
       </div>
       <div className="receipt_data_itm">
         <Wrapper>
