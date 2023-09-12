@@ -44,13 +44,17 @@ const OrderProvider = ({ children }) => {
             return toast.error("Enter Valid Phone Number");
         }
         // console.log("sendotp");
+        const toastId = toast.loading('Sending...');
         try {
+            // toast.loading('Sending...');
             const res = await axios.post("http://localhost:8080/api/sendotp", { phoneNumber });
+            toast.dismiss();
             const { msg } = await res.data;
-            // console.log("response : " + res);
-            return toast.success(msg);
+            // return toast.success(msg);
+            return toast.success(msg, { id: toastId });
         } catch (error) {
-            return toast.error("Error To sendotp !!");
+            return toast.error('Error To sendotp !!', { id: toastId });
+            // return toast.error("Error To sendotp !!");
             // dispatch({ type: "API_ERROR" });
         }
     };
@@ -61,12 +65,14 @@ const OrderProvider = ({ children }) => {
     // };
 
     const otpverify = async (phoneNumber, otp) => {
+        const toastId = toast.loading('Verifying...');
         try {
             const res = await axios.post("http://localhost:8080/api/verifyotp", { phoneNumber, otp });
             const { valid } = await res.data;
             // console.log("response : " + res);
             if (!valid) {
-                return toast.error("OTP verification failed");
+                return toast.error('OTP verification failed', { id: toastId });
+                // return toast.error("OTP verification failed");
             } else {
                 dispatch({ type: "VERIFICATIOIN" });
                 // dispatch({ type: "VERIFICATIOIN" });
@@ -75,7 +81,9 @@ const OrderProvider = ({ children }) => {
 
         } catch (error) {
             // console.log(error);
-            return toast.error("Error To verifyotp !!");
+            // return toast.error("Error To verifyotp !!");
+            return toast.error('Error To verifyotp !!', { id: toastId });
+
             // dispatch({ type: "API_ERROR" });
         }
     };

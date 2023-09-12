@@ -96,7 +96,7 @@ const Cart = () => {
               </div>
               <div className="final_order">
                 <p className='rc_otp'>OTP : </p>
-                <input class="f_inp" id="OTP" name="OTP" value={userotp} onChange={(e) => setuserotp(e.target.value)} placeholder="  Enter OTP" type="number" maxLength="6" />
+                <input class="f_inp" id="OTP" name="OTP" value={userotp} onChange={(e) => setuserotp(e.target.value)} placeholder="  Enter OTP" type="number" />
                 <button onClick={() => otpverify(userPhone, userotp)} > Verify OTP</button>
               </div>
               <div className="final_order">
