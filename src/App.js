@@ -3,6 +3,7 @@ import Home from './components/Home';
 import Menu from './components/Itm_list';
 import './App.css';
 import Contact from './components/Contact';
+import React from 'react';
 // import { render } from "react-dom";
 import {
   BrowserRouter as Router,
@@ -14,10 +15,30 @@ import Footer from './components/Footer';
 import Unknownurl from './components/Unknownurl';
 import Cart from './components/Cart';
 import { Toaster } from 'react-hot-toast';
-import Receipt from './components/Receipt';
+// import Receipt from './components/Receipt';
+import Order_details from './components/Order_details';
+import Login from './components/Login';
+import AdminHome from './components/adminhome';
+// import { useAuth } from './context/AuthContext';
+// import jwt_decode from 'jwt-decode';
+import Protected from './components/Protected';
 
 
 function App() {
+
+  // const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
+  // // const { isAdminAuthenticated } = useAuth();
+  // // Check if the user is an admin based on the token
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //   if (token) {
+  //     const decoded = jwt_decode(token);
+  //     setIsAdminAuthenticated(decoded.username === 'admin');
+  //   } else {
+  //     setIsAdminAuthenticated(false);
+  //   }
+  // }, []);
+
   return (
     <>
       <div className='mainapp'>
@@ -33,7 +54,10 @@ function App() {
               <Route path='/contact' element={<Contact />} />
               <Route path='/menu' element={<Menu />} />
               <Route path='/cart' element={<Cart />} />
-              <Route path='/receipt' element={<Receipt />} />
+              <Route path='/admin/login' element={<Login />} />
+              <Route path='/admin/orderdetails' element={<Protected Component={Order_details} />} />
+              <Route path='/admin/adminhome' element={<Protected Component={AdminHome} />} />
+              {/* <Route path='/admin/home' element={<AdminHome />} /> */}
               <Route path='*' element={<Unknownurl />} />
             </Routes>
             <Footer />
