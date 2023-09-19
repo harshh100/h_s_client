@@ -22,7 +22,9 @@ export default function Navbar() {
                             <Link to="/about" className='fontco'>AboutUs</Link>
                         </li>
                         <li className='navitom'>
-                            <img src={Logo} alt="Logo" className='logonav' />
+                            <Link to="/admin/login">
+                                <img src={Logo} alt="Logo" className='logonav' />
+                            </Link>
                         </li>
 
                         <li className='navitom'>
