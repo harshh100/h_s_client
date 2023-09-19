@@ -38,6 +38,8 @@ export async function adminlogin({ username, password }) {
             // Navigate('/');
             // console.log(token);
             return Promise.resolve();
+        } else {
+            toast.error("Wrong Credentials", { id: toastId })
         }
     } catch (error) {
         console.error('Error:', error);

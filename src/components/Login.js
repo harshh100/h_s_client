@@ -4,6 +4,8 @@ import { adminlogin } from "../helper/helper";
 // import { Navigate } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
+import Logo from './Img/h_&_s_black.png'
+
 
 
 function Login() {
@@ -36,7 +38,7 @@ function Login() {
             <div className="con">
                 <center>
                     <div className="imgcon">
-                        <img src="h_&_s_black.png" alt="logo" className="logo" />
+                        <img src={Logo} alt="logo" className="logo" />
                     </div>
                 </center>
 
