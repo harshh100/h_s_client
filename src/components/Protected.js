@@ -16,7 +16,7 @@ function Protected(props) {
 
         try {
             const decoded = jwt_decode(token);
-            if (decoded.username !== "admin") {
+            if (!decoded.username) {
                 navigate('/admin/login');
             }
         } catch (error) {

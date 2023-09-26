@@ -26,19 +26,6 @@ import Protected from './components/Protected';
 
 function App() {
 
-  // const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
-  // // const { isAdminAuthenticated } = useAuth();
-  // // Check if the user is an admin based on the token
-  // useEffect(() => {
-  //   const token = localStorage.getItem('token');
-  //   if (token) {
-  //     const decoded = jwt_decode(token);
-  //     setIsAdminAuthenticated(decoded.username === 'admin');
-  //   } else {
-  //     setIsAdminAuthenticated(false);
-  //   }
-  // }, []);
-
   return (
     <>
       <div className='mainapp'>

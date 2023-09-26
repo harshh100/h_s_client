@@ -23,7 +23,6 @@ const Receipt = () => {
   return (
     <div id="receipt">
       {/* <button onClick={printDocument}>Generate Receipt</button> */}
-
       {/* <p>Receipt No : {receiptNo}</p> */}
       <div className="receipt_logo">
         <img id="rc_img" src={Logo} alt="" />

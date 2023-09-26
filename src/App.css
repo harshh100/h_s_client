@@ -1230,6 +1230,7 @@ textarea::-webkit-scrollbar-thumb {
 .buy_now .icon {
   background-color: #f49f04;
   overflow: hidden;
+  border: 0px;
   border-radius: 6px;
   position: absolute;
   width: 100%;

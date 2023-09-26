@@ -1,61 +1,128 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast';
 import styled from "styled-components";
+import axios from "axios";
+import { BiSolidPhoneCall } from "react-icons/bi"
 
 
 function Order_details() {
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from the API
+    axios.get('http://localhost:8080/api/getOrders')
+      .then((response) => {
+        setOrders(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
+
   return (
     <Wrapper>
-      {/* <h1>Responstable <span>2.0</span> by <span>jordyvanraaij</span></h1> */}
-
       <table class="responstable">
-
-        <tr>
-          <th>Main driver</th>
-          <th data-th="Driver details"><span>First name</span></th>
-          <th>Surname</th>
-          <th>Date of birth</th>
-          <th>Relationship</th>
-        </tr>
-
-        <tr>
-          <td><input type="radio" /></td>
-          <td>Steve</td>
-          <td>Foo</td>
-          <td>01/01/1978</td>
-          <td>Policyholder</td>
-        </tr>
-
-        <tr>
-          <td><input type="radio" /></td>
-          <td>Steffie</td>
-          <td>Foo</td>
-          <td>01/01/1978</td>
-          <td>Spouse</td>
-        </tr>
-
-        <tr>
-          <td><input type="radio" /></td>
-          <td>Stan</td>
-          <td>Foo</td>
-          <td>01/01/1994</td>
-          <td>Son</td>
-        </tr>
-
-        <tr>
-          <td><input type="radio" /></td>
-          <td>Stella</td>
-          <td>Foo</td>
-          <td>01/01/1992</td>
-          <td>Daughter</td>
-        </tr>
-
+        <thead>
+          <tr>
+            <th>UserName</th>
+            <th>ReceiptNo</th>
+            <th>Price</th>
+            <th>Time</th>
+            <th>Order Itms</th>
+            <th>Mobile Number</th>
+          </tr>
+        </thead>
+        {/* { console.log("map orders : " + JSON.stringify(order.username)) } */}
+        {/* <td>{order.cart}</td> */}
+        {/* <td>{order.}</td> */}
+        <tbody>
+          {orders.map((order) => (
+            <tr key={order._id}>
+              <td>{order.username}</td>
+              <td>{order.ReceiptNo}</td>
+              <td>{order.TotalPrice}</td>
+              <td>{order.Ordertime}</td>
+              <td></td>
+              {/* <td>{order.userPhone}</td> */}
+              <td><button class="bookmarkBtn">
+                <span class="IconContainer">
+                  <BiSolidPhoneCall />
+                </span>
+                <p class="text">{order.userPhone}</p>
+              </button></td>
+              {/* <td>{order.cart}</td> */}
+            </tr>
+          ))}
+        </tbody>
       </table>
-    </Wrapper>
+    </Wrapper >
   )
 }
 
 const Wrapper = styled.section`
+
+
+
 .responstable {
+  .bookmarkBtn {
+  width: 140px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.349);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: .3s;
+  overflow: hidden;
+}
+
+.IconContainer {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to bottom, #FFCC80,rgb(244 159 4));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: .3s;
+}
+
+.icon {
+  border-radius: 1px;
+}
+
+.text {
+  height: 100%;
+  width: 100px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition-duration: .3s;
+  font-size: 1.04em;
+}
+
+.bookmarkBtn:hover .IconContainer {
+  width: 130px;
+  border-radius: 40px;
+  transition-duration: .3s;
+}
+
+.bookmarkBtn:hover .text {
+  transform: translate(10px);
+  width: 0;
+  font-size: 0;
+  transition-duration: .3s;
+}
+
+.bookmarkBtn:active {
+  transform: scale(0.95);
+  transition-duration: .3s;
+}
     margin: 1em auto;
     width: 85%;
     overflow: hidden;
@@ -67,8 +134,8 @@ const Wrapper = styled.section`
   .responstable tr {
     border: 1px solid #D9E4E6;
   }
-  .responstable tr:nth-child(odd) {
-    background-color: #EAF3F3;
+  .responstable tr:nth-child(even) {
+    background-color: #fdeccd75;
   }
   .responstable th {
     display: none;
@@ -106,11 +173,11 @@ const Wrapper = styled.section`
   .responstable td:first-child {
     display: table-cell;
     text-align: center;
-    border-right: 1px solid #D9E4E6;
+    border: 1px solid #fdeccd;
   }
   @media (min-width: 480px) {
     .responstable td {
-      border: 1px solid #D9E4E6;
+      border: 1px solid #fdeccd;
     }
   }
   .responstable th, .responstable td {
