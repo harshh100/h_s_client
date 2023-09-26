@@ -101,6 +101,14 @@ const orderReducer = (state, action) => {
                 featureProducts: featureData,
             };
 
+        case "AFTERORDER":
+            return {
+                ...state,
+                otpverified: false,
+                userotp: "",
+                receiptNo: "",
+            };
+
         case "API_ERROR":
             return {
                 ...state,

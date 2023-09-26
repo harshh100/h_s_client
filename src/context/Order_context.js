@@ -20,6 +20,10 @@ const OrderProvider = ({ children }) => {
 
     const [state, dispatch] = useReducer(reducer, initialState);
 
+    const afterorder = () => {
+        dispatch({ type: "AFTERORDER" });
+    }
+
     const setuserName = (name) => {
         // console.log(name);
         dispatch({ type: "SETUSERNAME", payload: name });
@@ -99,7 +103,7 @@ const OrderProvider = ({ children }) => {
     };
 
 
-    return <OrderContext.Provider value={{ ...state, setuserName, setuserPhone, sendotp, setuserotp, otpverify, settotime }}>{children}</OrderContext.Provider>
+    return <OrderContext.Provider value={{ ...state, setuserName, setuserPhone, sendotp, setuserotp, otpverify, settotime, afterorder }}>{children}</OrderContext.Provider>
 
 }
 

@@ -13,22 +13,31 @@ import { MdVerified, MdCancel } from "react-icons/md"
 // import { ReactToPrint } from 'react-to-print';
 import html2pdf from 'html2pdf.js';
 import { useOrderContext } from '../context/Order_context';
+import { bookorder } from '../helper/helper'
+import { useNavigate } from 'react-router-dom';
 
 
 const Cart = () => {
   const { cart, total_price } = useCartContext();
-  const { userName, userPhone, totime, otpverified, userotp, setuserName, setuserPhone, sendotp, setuserotp, otpverify, settotime } = useOrderContext();
+  const { userName, userPhone, receiptNo, totime, otpverified, userotp, setuserName, setuserPhone, sendotp, setuserotp, otpverify, settotime, afterorder } = useOrderContext();
   // console.log(cart);
+  const navigate = useNavigate();
+
 
   function printDocument() {
-    const contentElement = document.getElementById('receipt');
-    // Image URL
-    // const imageUrl = './Img/h_&_s_black.png';
 
-    // Convert HTML to PDF
-    html2pdf().from(contentElement).set({
-      margin: [5, -7, 10, 10] // top, right, bottom, left
-    }).save('H&S_receipt.pdf');
+    bookorder(userName, userPhone, receiptNo, totime, cart, total_price)
+      .then(() => {
+        const contentElement = document.getElementById('receipt');
+        // Convert HTML to PDF
+        html2pdf().from(contentElement).set({
+          margin: [5, -7, 10, 10] // top, right, bottom, left
+        }).save('H&S_receipt.pdf');
+        afterorder();
+        navigate('/');
+        return;
+
+      })
   }
 
   function Verify_frist() {
@@ -124,12 +133,10 @@ const Cart = () => {
             <div id="btndiv">
               {/* <Link to="/bookorder"> */}
               {/* <button type="submit" id="buttonorder">Order Now</button> */}
-              <button className="button" onClick={otpverified ? printDocument : Verify_frist}> Order Now <img src={cartlogo} alt="icon" id='cart' />
+              <button className="button" onClick={otpverified ? printDocument : Verify_frist}> Book The Order <img src={cartlogo} alt="icon" id='cart' />
               </button>
               {/* </Link> */}
-
             </div>
-            {/* <button >Generate Receipt</button> */}
           </div>
         </div>
       </div>
