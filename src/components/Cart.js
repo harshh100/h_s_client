@@ -29,6 +29,9 @@ const Cart = () => {
     bookorder(userName, userPhone, receiptNo, totime, cart, total_price)
       .then(() => {
         const contentElement = document.getElementById('receipt');
+
+        // console.log("Cartcomponent");
+        // console.log(cart);
         // Convert HTML to PDF
         html2pdf().from(contentElement).set({
           margin: [5, -7, 10, 10] // top, right, bottom, left

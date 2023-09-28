@@ -638,6 +638,13 @@ svg {
   /* background-color: #f4a00470; */
 }
 
+.od_cart {
+  background-color: #f49f04;
+  border: none;
+  color: #000000;
+  margin-left: 35px;
+}
+
 .takeover {
   margin-right: 21px;
 }

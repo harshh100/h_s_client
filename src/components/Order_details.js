@@ -3,6 +3,7 @@ import toast from 'react-hot-toast';
 import styled from "styled-components";
 import axios from "axios";
 import { BiSolidPhoneCall } from "react-icons/bi"
+import { FaCartArrowDown } from "react-icons/fa"
 
 
 function Order_details() {
@@ -36,13 +37,27 @@ function Order_details() {
         {/* <td>{order.cart}</td> */}
         {/* <td>{order.}</td> */}
         <tbody>
-          {orders.map((order) => (
+          {orders.map((order, index) => (
             <tr key={order._id}>
               <td>{order.username}</td>
               <td>{order.ReceiptNo}</td>
               <td>{order.TotalPrice}</td>
-              <td>{order.Ordertime}</td>
-              <td></td>
+              <td>{order.Take_time}</td>
+              <td>
+                <p class="d-inline-flex gap-1">
+                  <button class="btn btn-primary od_cart" type="button" data-bs-toggle="collapse" data-bs-target={`#collapseExample${index}`} aria-expanded="false" aria-controls={`collapseExample${index}`}>
+                    <FaCartArrowDown /> View Cart
+                  </button>
+                </p>
+                <div class="collapse" id={`collapseExample${index}`}>
+                  <div class="card card-body">
+                    {order.cart.map((citm) => (
+                      <p key={citm._id}>
+                        <b>Itemname :</b> {citm.name}, <b>price:</b> {citm.price}, <b>amount:</b>{citm.amount}, <b>itmTotalPrice:</b>{citm.itmTotalPrice}</p>))
+                    }
+                  </div>
+                </div>
+              </td>
               {/* <td>{order.userPhone}</td> */}
               <td><button class="bookmarkBtn">
                 <span class="IconContainer">
@@ -50,7 +65,7 @@ function Order_details() {
                 </span>
                 <p class="text">{order.userPhone}</p>
               </button></td>
-              {/* <td>{order.cart}</td> */}
+
             </tr>
           ))}
         </tbody>

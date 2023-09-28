@@ -80,7 +80,7 @@ export async function bookorder(userName, userPhone, receiptNo, totime, cart, to
 
     // console.log(`Current time: ${formattedHours}:${formattedMinutes}`);
     try {
-        // console.log("Sending data:", { username: userName, userPhone: userPhone, ReceiptNo: receiptNo, Take_time: totime, cart: cart, TotalPrice: total_price, Ordertime: CurrentTime });
+        console.log("Sending data:", { username: userName, userPhone: userPhone, ReceiptNo: receiptNo, Take_time: totime, cart: cart, TotalPrice: total_price, Ordertime: CurrentTime });
         await axios.post('http://localhost:8080/api/createorder', { username: userName, userPhone: userPhone, ReceiptNo: receiptNo, Take_time: totime, cart: cart, TotalPrice: total_price, Ordertime: CurrentTime })
         toast.success("Your order has been Booked")
         return Promise.resolve()
