@@ -51,9 +51,14 @@ function Order_details() {
                 </p>
                 <div class="collapse" id={`collapseExample${index}`}>
                   <div class="card card-body">
+                    <p><i>Order Time : {order.Ordertime}</i></p>
                     {order.cart.map((citm) => (
                       <p key={citm._id}>
-                        <b>Itemname :</b> {citm.name}, <b>price:</b> {citm.price}, <b>amount:</b>{citm.amount}, <b>itmTotalPrice:</b>{citm.itmTotalPrice}</p>))
+                        <p><b>Itemname :</b> {citm.name},</p>
+                        <p><b>price:</b> {citm.price}, </p>
+                        <p><b>amount:</b>{citm.amount}, </p>
+                        <p><b>itmTotalPrice:</b>{citm.price * citm.amount} <hr /></p>
+                      </p>))
                     }
                   </div>
                 </div>
