@@ -27,8 +27,9 @@ function Login() {
         const token = localStorage.getItem('token');
         if (token) {
             const decoded = jwt_decode(token);
-            if (decoded.username === "admin") {
-                navigate('/admin/adminhome');
+            // console.log(decoded);
+            if (decoded.role === "admin") {
+                navigate('/admin/orderdetails');
             }
         }
     }, []);
@@ -53,7 +54,7 @@ function Login() {
                     </div>
                     <center>
                         <div className="con-itm1">
-                            <button type="submit" onClick={() => adminlogin({ username: adminname, password: adminpassword }).then(function () { navigate('/admin/adminhome') })}>Login</button>
+                            <button type="submit" onClick={() => adminlogin({ username: adminname, password: adminpassword }).then(function () { navigate('/admin/orderdetails') })}>Login</button>
                         </div>
                     </center>
                 </div>

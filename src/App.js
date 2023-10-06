@@ -22,8 +22,8 @@ import AdminHome from './components/adminhome';
 // import { useAuth } from './context/AuthContext';
 // import jwt_decode from 'jwt-decode';
 import Protected from './components/Protected';
-import UserLayout from './components/UserLayout';
-import AdminLayout from './components/AdminLayout';
+// import UserLayout from './components/UserLayout';
+// import AdminLayout from './components/AdminLayout';
 
 function App() {
 
